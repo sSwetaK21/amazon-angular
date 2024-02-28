@@ -1,0 +1,252 @@
+/* section one here */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.body_imgtag {
+  width: auto;
+  height: 540px;
+}
+
+.img_textbox {
+  /* position: absolute;
+    top: 12%;
+    left: 38%; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_head {
+  font-size: 45px;
+  color: #524848;
+  font-weight: bold;
+}
+
+.img_para {
+  color: #524848;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.click_link {
+  position: absolute;
+  display: flex;
+  bottom: 10%;
+  right: 2%;
+  width: 82%;
+  padding: 10px 90px;
+  background-color: #f5f6f6;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* grid here */
+.Grid_layout {
+  background-image: linear-gradient(rgb(47 57 86), rgb(197, 204, 225));
+
+  /* background-color: #7580a0; */
+  padding-bottom: 10px;
+}
+
+.cards_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: minmax(100px, 1fr);
+
+  grid-gap: 1em;
+  grid-template-areas:
+    "cards_one cards_two cards_three cards_four"
+    "cards_one cards_two cards_three .";
+}
+
+.card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.card-container .card:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
+
+.cards_style {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 2px;
+  /* box-shadow: 1px 1px 4px 0px #fff; */
+  z-index: 1;
+}
+.cards_five {
+  z-index: 1;
+}
+
+.cards_one {
+  grid-area: cards_one;
+  transition: all 0.2s ease-in-out;
+}
+.cards:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+.cards_two {
+  grid-area: cards_two;
+}
+
+.cards_three {
+  grid-area: cards_three;
+}
+
+.cards_four {
+  grid-area: cards_four;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card_img {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 100px; */
+  justify-content: center;
+  align-items: center;
+}
+
+.card_imgtag {
+  width: 140px;
+  /* height: 120px; */
+  height: 150px;
+}
+.card_head {
+  padding-bottom: 10px;
+}
+.card_text {
+  /* padding: 10px 0px; */
+  text-align: left;
+  padding-top: 20px;
+  /* color: blue; */
+}
+
+.card_link {
+  text-decoration: none;
+  color: #007185;
+}
+.card_link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #c7511f;
+}
+
+.body_img {
+  background-image: url("/assets/images/body_img.jpg");
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  top: 0;
+}
+/* .body_img::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: -10px;
+    background-image: linear-gradient(to bottom, #7580a0, #fff);
+} */
+
+/* second row hre */
+.card_1img {
+  width: 280px;
+  height: 300px;
+}
+
+.card_button {
+  background: #ffcf56;
+  width: 100%;
+  border: 1px solid #e6a400;
+  color: #ffcf56;
+  text-shadow: 0 1px 0 #ffe093;
+  text-align: center;
+  padding: 5px 0px;
+  /* background-image: url(https://m.media-amazon.com/images/S/sash/vfqcwUkuArEiwD2.png); */
+  border-radius: 5px;
+  margin: 10px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.card_button:hover {
+  background: #ff9933;
+  color: white;
+}
+
+.card_ends {
+  display: inline;
+  color: #cc0c39;
+  font-weight: 600;
+}
+
+.card_2img {
+  width: 200px;
+  height: 190px;
+}
+
+.card_btn {
+  background-color: #cc0c39;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  font-size: 15px;
+}
+
+.card_para2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card_graypara {
+  color: #565959;
+  font-size: 14px;
+}
+
+.crossline {
+  text-decoration: line-through;
+}
+
+/* popular row here */
+.popular_row,
+.frequent_row {
+  max-width: 1300px;
+  margin: 20px auto;
+  border-radius: 2px;
+
+  background-color: #fff;
+}
+.popular_row_grid,
+.frequent_row_grid {
+  display: grid;
+  grid-gap: 1em;
+  /* overflow: scroll; */
+  grid-template-columns: repeat(6, auto);
+}
+.popular_head,
+.frequent_head {
+  padding: 10px;
+}
+
+.signBox {
+  display: flex;
+  /* flex: 1 1; */
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.signBox p {
+  font-size: 12px;
+}

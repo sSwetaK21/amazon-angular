@@ -1,0 +1,103 @@
+<!-- <mat-card>
+  <mat-card-header>
+    <mat-card-title>Sign In</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+
+      <mat-card-actions
+        [ngStyle]="{ display: 'flex', 'justify-content': 'space-evenly' }"
+      >
+        <button type="submit" class="btn-limo">Submit</button>
+        <button routerLink="/register" class="btn-limo">Register</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card> -->
+
+<div class="brand">
+  <img
+    src="assets/images/amazon-black.png"
+    alt="amazon logo"
+    class="Brand-img"
+  />
+</div>
+
+<div class="auth-portal">
+  <div class="card">
+    <h2 class="title">Sign In</h2>
+    <div class="content">
+      <form
+        class="example-form"
+        [formGroup]="loginForm"
+        (ngSubmit)="Onsubmit()"
+      >
+        <!-- <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            formControlName="email"
+            placeholder="Ex. pat@example.com"
+          />
+        </mat-form-field> -->
+
+        <!-- <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field> -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input matInput type="email" formControlName="username" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input matInput type="password" formControlName="password" />
+        </div>
+
+        <div class="form-group">
+          <label for="userType">User Type</label>
+          <select formControlName="userType" id="userType" class="form-control">
+            <option value="customer">Customer</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+
+        <button type="submit" class="card_button">Continue</button>
+
+        <div class="textt">
+          By continuing, you agree to Amazon's
+          <a href=""> Conditions of Use</a> and
+          <a href="">Privacy Notice.</a>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="shop">
+          <p>Buying for Work?</p>
+          <a href="">Shop with Amazon Business</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="hr-with-text">
+  <hr />
+  <h5 aria-level="5" class="hrtext">New to Amazon?</h5>
+</div>
+<div class="butn">
+  <button type="submit" class="card_button" routerLink="/register">
+    Create your Amazon Account
+  </button>
+</div>

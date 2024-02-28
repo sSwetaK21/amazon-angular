@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* General */
+.body {
+  font-family: "Open Sans", sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #ff9933;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #0066c0;
+}
