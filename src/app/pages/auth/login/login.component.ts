@@ -25,6 +25,37 @@ export class LoginComponent {
   });
   userData: any;
 
+  // Onsubmit() {
+  //   if (this.loginForm.valid) {
+  //     const userType = this.loginForm.value.userType;
+  //     this.authService
+  //       .getByCode(this.loginForm.value.username)
+  //       .subscribe((res) => {
+  //         this.userData = res;
+  //         console.log(this.userData);
+  //         if (this.userData) {
+  //           if (this.userData.password === this.loginForm.value.password) {
+  //             sessionStorage.setItem('username', this.userData.id);
+  //             this.toastr.success('Logged In succesfully');
+
+  //             if (userType === 'admin') {
+  //               this.router.navigate(['/dashboard']);
+  //             } else {
+  //               this.router.navigate(['/header']);
+  //               this.router.navigate(['/home']);
+  //             }
+  //           } else {
+  //             this.toastr.error('Please contact Admin', 'Inactive User');
+  //           }
+  //         } else {
+  //           this.toastr.warning('Invalid Credentials');
+  //         }
+  //       });
+  //   } else {
+  //     this.toastr.error('Please Enter Valid values');
+  //   }
+  // }
+
   Onsubmit() {
     if (this.loginForm.valid) {
       const userType = this.loginForm.value.userType;
@@ -37,14 +68,14 @@ export class LoginComponent {
             if (this.userData.password === this.loginForm.value.password) {
               sessionStorage.setItem('username', this.userData.id);
               this.toastr.success('Logged In succesfully');
-
+              console.log(this.userData);
               if (userType === 'admin') {
                 this.router.navigate(['/dashboard']);
               } else {
                 this.router.navigate(['/home']);
               }
             } else {
-              this.toastr.error('Please contact Admin', 'Inactive User');
+              this.toastr.warning('Invalid Credentials');
             }
           } else {
             this.toastr.warning('Invalid Credentials');

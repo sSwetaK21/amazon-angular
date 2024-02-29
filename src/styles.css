@@ -12,11 +12,11 @@
   font-family: "Open Sans", sans-serif;
 }
 body::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
   background: transparent;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #ff9933;
+  background-color: #c0c0c0;
   border-radius: 10px;
 }
 body::-webkit-scrollbar-track {

@@ -34,22 +34,45 @@ export class RegisterComponent {
     isactive: this.builder.control(false),
   });
 
+  // proceedRegister() {
+  //   console.log(this.registerForm);
+  //   if (this.registerForm.valid) {
+  //     const userType: string = this.registerForm.value.userType || 'customer';
+  //     this.authService
+  //       .proceedRegister(userType, this.registerForm.value)
+  //       .subscribe((res) => {
+  //         this.toastr.success(
+  //           'Please contact Admin to enable Access',
+  //           'Registration Successfully'
+  //         );
+  //         console.log('form');
+  //         this.router.navigate(['/login']);
+  //       });
+  //   } else {
+  //     this.toastr.warning('Please enter Valid data', 'Invalid Data');
+  //   }
+  // }
+
   proceedRegister() {
-    console.log(this.registerForm);
     if (this.registerForm.valid) {
       const userType: string = this.registerForm.value.userType || 'customer';
+
       this.authService
         .proceedRegister(userType, this.registerForm.value)
-        .subscribe((res) => {
-          this.toastr.success(
-            'Please contact Admin to enable Access',
-            'Registration Successfully'
-          );
-          console.log('form');
-          this.router.navigate(['/login']);
-        });
+        .subscribe(
+          (res) => {
+            // Handle successful registration
+            this.toastr.success('Registered successfully');
+            this.router.navigate(['/login']);
+          },
+          (error) => {
+            // Handle registration error
+            console.error(error);
+            this.toastr.error('Registration failed');
+          }
+        );
     } else {
-      this.toastr.warning('Please enter Valid data', 'Invalid Data');
+      this.toastr.error('Please Enter Valid values');
     }
   }
 }

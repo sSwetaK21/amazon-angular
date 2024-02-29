@@ -20,4 +20,8 @@ export class AuthService {
   proceedRegister(userType: string, inputData: any) {
     return this._http.post(this.apiUrl, inputData);
   }
+
+  deleteRow(rowId: string) {
+    return this._http.delete(`${this.apiUrl}/${rowId}`);
+  }
 }

@@ -1,0 +1,28 @@
+.mdc-card {
+  background-color: #4723d9;
+  color: white;
+}
+.mat-mdc-card-content:last-child {
+  padding-bottom: 16px;
+  border-radius: 5px;
+}
+
+.row {
+  margin: 0;
+  --bs-gutter-x: 10px;
+  --bs-gutter-y: 10px;
+  padding: 10px;
+}
+
+.bg-mono-primary {
+  background-color: #4723d9;
+}
+.bg-mono2 {
+  background-color: #262d98;
+}
+.bg-lightmono3 {
+  background-color: #cfd2ff;
+}
+.bg-mono4 {
+  background-color: #a0a6ff;
+}

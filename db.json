@@ -1,12 +1,6 @@
 {
   "user": [
     {
-      "id": "shweta",
-      "userType": "customer",
-      "username": "swheta@gmail.com",
-      "password": "hhjh567674678638543"
-    },
-    {
       "id": "asjgjhsga",
       "userType": "customer",
       "email": "sadhksah2@gnail.com",
@@ -23,6 +17,13 @@
       "userType": "admin",
       "email": "admin@gmail.com",
       "password": "shweta@1234Kodam",
+      "isactive": false
+    },
+    {
+      "id": "neha",
+      "userType": "customer",
+      "email": "neha@gmail.com",
+      "password": "nehaKodam@12345",
       "isactive": false
     }
   ]
