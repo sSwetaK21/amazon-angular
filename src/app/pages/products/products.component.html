@@ -1,1 +1,14 @@
-<p>products works!</p>
+<app-header></app-header>
+
+<div class="products">
+  <h2>Products</h2>
+  <div class="sorting">
+    <button mat-button [matMenuTriggerFor]="sort">Sort</button>
+    <mat-menu #sort="matMenu">
+      <button mat-menu-item>High to Low</button>
+      <button mat-menu-item>Low to High</button>
+    </mat-menu>
+  </div>
+
+  <mat-divider></mat-divider>
+</div>
