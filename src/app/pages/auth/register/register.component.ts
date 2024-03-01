@@ -26,12 +26,10 @@ export class RegisterComponent {
     ),
     password: this.builder.control(
       '',
-      Validators.compose([
-        Validators.required,
-        Validators.pattern('((?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,30})'),
-      ])
+      Validators.compose([Validators.required])
+      // password pattern here
+      // Validators.pattern('((?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,30})'),
     ),
-    isactive: this.builder.control(false),
   });
 
   // proceedRegister() {
@@ -54,6 +52,8 @@ export class RegisterComponent {
   // }
 
   proceedRegister() {
+    console.log(this.registerForm.value);
+
     if (this.registerForm.valid) {
       const userType: string = this.registerForm.value.userType || 'customer';
 

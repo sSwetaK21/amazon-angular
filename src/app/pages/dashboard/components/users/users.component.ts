@@ -46,15 +46,16 @@ export class UsersComponent {
     });
   }
 
-  deleteRow(rowId: TableRow) {
-    const index = this.dataSource.data.findIndex((r: any) => r.id === rowId.id);
+  deleteRow(row: TableRow) {
+    const index = this.dataSource.data.findIndex((r: any) => r.id === row.id);
     // console.log(index !== -1);
     if (index !== -1) {
       this.dataSource.data.splice(index, 1);
       // this.dataSource._updateChangeSubscription(); // mat-function which will delete it on runtime
+      this.dataSource.data = [...this.dataSource.data]; // Update table on ui like on deleting it will update it no need to refresh for changes
     }
 
-    this.authService.deleteRow(rowId.id).subscribe(
+    this.authService.deleteRow(row.id).subscribe(
       (res) => {
         this.toastr.success('Deleted');
       },

@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CardsComponent } from './pages/dashboard/components/cards/cards.component';
 import { UsersComponent } from './pages/dashboard/components/users/users.component';
+import { LayoutComponent } from './pages/dashboard/components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UsersComponent } from './pages/dashboard/components/users/users.compone
     DashboardComponent,
     CardsComponent,
     UsersComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

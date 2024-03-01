@@ -1,18 +1,6 @@
 {
   "user": [
     {
-      "id": "asjgjhsga",
-      "userType": "customer",
-      "email": "sadhksah2@gnail.com",
-      "password": "shweta@21Kodam"
-    },
-    {
-      "id": "shweta",
-      "userType": "customer",
-      "email": "shweta2@gmail.com",
-      "password": "shweta@21Kodam"
-    },
-    {
       "id": "admin",
       "userType": "admin",
       "email": "admin@gmail.com",
@@ -25,6 +13,18 @@
       "email": "neha@gmail.com",
       "password": "nehaKodam@12345",
       "isactive": false
+    },
+    {
+      "id": "shweta",
+      "userType": "customer",
+      "email": "shweta@gmail.com",
+      "password": "shweta@221Kodam"
+    },
+    {
+      "id": "pawankumar",
+      "userType": "customer",
+      "email": "pawan@gmail.com",
+      "password": "pawan@21Kumar"
     }
   ]
 }

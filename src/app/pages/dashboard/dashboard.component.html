@@ -7,9 +7,22 @@
       <img
         src="https://modernize-angular-dark.netlify.app/assets/images/profile/user-1.jpg"
         alt=""
+        (click)="toggleMenu($event)"
+        [matMenuTriggerFor]="menu"
       />
+
+      <!-- <button mat-icon-button >
+        <mat-icon>more_vert</mat-icon>
+      </button> -->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item routerLink="/login">Sign Out</button>
+      </mat-menu>
     </div>
   </header>
+
+  <!-- //sidebar -->
+
   <div class="l-navbar" id="nav-bar">
     <nav class="nav">
       <div>
@@ -18,27 +31,56 @@
           <span class="nav_logo-name">Amazon</span>
         </a>
         <div class="nav_list">
-          <a href="#" class="nav_link active">
+          <a
+            href="#"
+            class="nav_link"
+            routerLink="/dashboard/layout"
+            routerLinkActive="active"
+          >
             <i class="bx bx-grid-alt nav_icon"></i>
             <span class="nav_name">Dashboard</span>
           </a>
-          <a href="#" class="nav_link">
+          <a
+            href="#"
+            class="nav_link"
+            routerLink="/dashboard/users"
+            routerLinkActive="active"
+          >
             <i class="bx bx-user nav_icon"></i>
             <span class="nav_name">Users</span>
           </a>
-          <a href="#" class="nav_link">
-            <i class="bx bx-message-square-detail nav_icon"></i>
+          <a
+            href="#"
+            class="nav_link"
+            routerLink="/dashboard/products"
+            routerLinkActive="active"
+          >
+            <i class="bx bxs-package"></i>
             <span class="nav_name">Products</span>
           </a>
-          <a href="#" class="nav_link">
-            <i class="bx bx-bookmark nav_icon"></i>
-            <span class="nav_name">Orders</span>
+          <a
+            href="#"
+            class="nav_link"
+            routerLink="/dashboard/orders"
+            routerLinkActive="active"
+          >
+            <i class="bx bx-receipt"></i> <span class="nav_name">Orders</span>
           </a>
-          <a href="#" class="nav_link">
-            <i class="bx bx-folder nav_icon"></i>
+          <a
+            href="#"
+            class="nav_link"
+            routerLink="/dashboard/customers"
+            routerLinkActive="active"
+          >
+            <i class="bx bx-user-pin"></i>
             <span class="nav_name">Customers</span>
           </a>
-          <a href="#" class="nav_link">
+          <a
+            href="#"
+            class="nav_link"
+            routerLink="/dashboard/stats"
+            routerLinkActive="active"
+          >
             <i class="bx bx-bar-chart-alt-2 nav_icon"></i>
             <span class="nav_name">Stats</span>
           </a>
@@ -51,9 +93,10 @@
     </nav>
   </div>
   <!--Container Main start-->
+
   <div class="height-100 bg-light">
-    <app-cards></app-cards>
-    <app-users></app-users>
+    <router-outlet></router-outlet>
   </div>
+
   <!--Container Main end-->
 </body>

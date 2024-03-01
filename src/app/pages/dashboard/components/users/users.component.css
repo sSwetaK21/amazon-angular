@@ -4,10 +4,13 @@ table {
 
 .mat-mdc-form-field {
   font-size: 14px;
-  width: 68%;
+  width: 100%;
 }
 
 td,
 th {
   width: 25%;
+}
+.usertable {
+  margin: 10px;
 }
