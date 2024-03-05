@@ -1,0 +1,47 @@
+.matCard[_ngcontent-ng-c1983717225] {
+  height: 250px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  border: 1px solid #d5dbdb;
+  margin: 10px;
+}
+.image {
+  width: 200px;
+}
+img.mat-mdc-card-image.mdc-card__media[_ngcontent-ng-c1983717225] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.price {
+  font-size: 38px;
+}
+p.discount {
+  color: red;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.card_button {
+  background: #ffcf56;
+  width: 200px;
+  border: 1px solid #e6a400;
+  color: #ffcf56;
+  text-shadow: 0 1px 0 #ffe093;
+  text-align: center;
+  padding: 5px 0px;
+  /* background-image: url(https://m.media-amazon.com/images/S/sash/vfqcwUkuArEiwD2.png); */
+  border-radius: 5px;
+  margin: 10px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.card_button:hover {
+  background: #ff9933;
+  color: white;
+}
+.card_content {
+  flex: 1;
+  padding: 10px;
+}

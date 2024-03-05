@@ -1,14 +1,56 @@
 <app-header></app-header>
 
-<div class="products">
-  <h2>Products</h2>
-  <div class="sorting">
-    <button mat-button [matMenuTriggerFor]="sort">Sort</button>
-    <mat-menu #sort="matMenu">
-      <button mat-menu-item>High to Low</button>
-      <button mat-menu-item>Low to High</button>
-    </mat-menu>
+<div class="products container-fluid">
+  <div class="productsTitle">
+    <h2>Today's Deal</h2>
+    <div class="sorting">
+      <button mat-raised-button [matMenuTriggerFor]="sort">Sort</button>
+      <mat-menu #sort="matMenu">
+        <button mat-menu-item>High to Low</button>
+        <button mat-menu-item>Low to High</button>
+      </mat-menu>
+    </div>
   </div>
-
   <mat-divider></mat-divider>
+
+  <div class="row">
+    <div class="col-2 productPage">
+      <div class="filterTitle">
+        <h2>Filter</h2>
+        <mat-icon>filter_list</mat-icon>
+      </div>
+      <div class="filterData">
+        <form>
+          <div *ngFor="let item of filterData">
+            <div class="filters">
+              <h3 class="f-title">{{ item.name }}</h3>
+              <div class="f-section">
+                <div *ngFor="let opt of item.options">
+                  <div class="flexBoxx">
+                    <mat-checkbox
+                      id="'filter-' + opt.value"
+                      [name]="item.id"
+                      [value]="opt.value"
+                      color="primary"
+                    >
+                      <span>{{ opt.label }}</span>
+                    </mat-checkbox>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-12" *ngFor="let product of products">
+          <div class="productsCards">
+            <app-product-card [product]="product"></app-product-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

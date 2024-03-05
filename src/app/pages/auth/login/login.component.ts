@@ -71,8 +71,10 @@ export class LoginComponent {
               console.log(this.userData);
               if (userType === 'admin') {
                 this.router.navigate(['/dashboard']);
-              } else {
+              } else if (userType === 'customer') {
                 this.router.navigate(['/home']);
+              } else {
+                this.router.navigate(['/dashboard']);
               }
             } else {
               this.toastr.warning('Invalid Credentials');

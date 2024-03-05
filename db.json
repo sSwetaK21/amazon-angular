@@ -25,6 +25,74 @@
       "userType": "customer",
       "email": "pawan@gmail.com",
       "password": "pawan@21Kumar"
+    },
+    {
+      "id": "ajay",
+      "userType": "admin",
+      "email": "ajay123@gmail.com",
+      "password": "ajay@1234Kumar"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Apple iPhone 13 (128GB) - Blue",
+      "category": "phone",
+      "color": "red",
+      "description": "iphone apple products",
+      "imageUrl": "https://m.media-amazon.com/images/I/3150P3KQFlL._SY445_SX342_QL70_FMwebp_.jpg",
+      "price": 52090,
+      "discountedPrice": 13,
+      "brand": "Apple",
+      "size": "128 GB"
+    },
+    {
+      "id": "426c",
+      "title": "Kurta",
+      "category": "two",
+      "brand": "Myyntra",
+      "color": "red",
+      "description": "This is pretty red kurta",
+      "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20230621/nLUA/64921d48d55b7d0c6380f68e/-473Wx593H-463166426-pink-MODEL.jpg",
+      "price": 2222,
+      "discountedPrice": 1222,
+      "size": "L"
+    },
+    {
+      "id": "ded3",
+      "title": "Men Regular Mid Rise Blue Jeans",
+      "category": "two",
+      "brand": "Roadster",
+      "color": "blue",
+      "description": "Mens Jeans",
+      "imageUrl": "https://rukminim1.flixcart.com/image/612/612/kb1470w0/jean/x/r/a/30-11274626-roadster-original-imafsgsthk6gdpjg.jpeg?q=70",
+      "price": 1159,
+      "discountedPrice": 591,
+      "size": "S"
+    },
+    {
+      "id": "a382",
+      "title": "Women Bodycon Yellow Dress",
+      "category": "two",
+      "brand": "Aarvia",
+      "color": "yellow",
+      "description": "Dresss",
+      "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/a/x/z/l-na-awd-19-yellow-aarvia-original-imagzffm3bkyzup2.jpeg?q=70",
+      "price": 1999,
+      "discountedPrice": 65,
+      "size": "S"
+    },
+    {
+      "id": "5c51",
+      "title": "Women Kurta, Pyjama & Dupatta Set Viscose Rayon",
+      "category": "two",
+      "brand": "The Style Story",
+      "color": "Pink",
+      "description": "Women Kurta, Pyjama & Dupatta Set Viscose Rayon",
+      "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l4u7vrk0/ethnic-set/u/h/4/m-e916-the-style-story-original-imagfmqguehvhen3.jpeg?q=70",
+      "price": 748,
+      "discountedPrice": 62,
+      "size": "S"
     }
   ]
 }

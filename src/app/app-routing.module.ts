@@ -8,6 +8,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { UsersComponent } from './pages/dashboard/components/users/users.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LayoutComponent } from './pages/dashboard/components/layout/layout.component';
+import { AddProductsComponent } from './pages/add-products/add-products.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,12 +18,13 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      // { path: '', redirectTo: 'layout', pathMatch: 'full' },
+      { path: '', redirectTo: 'layout', pathMatch: 'full' },
       { path: 'layout', component: LayoutComponent },
       { path: 'users', component: UsersComponent },
-      { path: 'products', component: ProductsComponent },
       { path: 'customers', component: UsersComponent },
       { path: 'orders', component: UsersComponent },
+      { path: 'addproduct', component: AddProductsComponent },
+
       { path: 'stats', component: UsersComponent },
     ],
   },

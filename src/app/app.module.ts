@@ -19,6 +19,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CardsComponent } from './pages/dashboard/components/cards/cards.component';
 import { UsersComponent } from './pages/dashboard/components/users/users.component';
 import { LayoutComponent } from './pages/dashboard/components/layout/layout.component';
+import { AddProductsComponent } from './pages/add-products/add-products.component';
+import { ProductCardComponent } from './pages/products/components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { LayoutComponent } from './pages/dashboard/components/layout/layout.comp
     CardsComponent,
     UsersComponent,
     LayoutComponent,
+    AddProductsComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
