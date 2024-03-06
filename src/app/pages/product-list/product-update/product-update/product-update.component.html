@@ -1,0 +1,84 @@
+<div class="addproducts container-fluid">
+  <form
+    class="example-form"
+    [formGroup]="updateForm"
+    (ngSubmit)="updateProduct(updateForm)"
+  >
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Name</mat-label>
+          <input matInput formControlName="title" placeholder="Shirt" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Brand</mat-label>
+          <input matInput formControlName="brand" placeholder="Zara" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Image</mat-label>
+          <input matInput formControlName="imageUrl" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Price</mat-label>
+          <input matInput type="number" formControlName="price" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Color</mat-label>
+          <input matInput formControlName="color" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Size</mat-label>
+          <input matInput placeholder="S" formControlName="size" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-4">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Category</mat-label>
+          <mat-select formControlName="category">
+            <mat-option value="one">Shirts</mat-option>
+            <mat-option value="two">Kurtas</mat-option>
+            <mat-option value="two">Jeans</mat-option>
+            <mat-option value="two">Tshirts</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product description</mat-label>
+          <textarea
+            matInput
+            placeholder="Apple product"
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Discount Price</mat-label>
+          <input matInput type="number" formControlName="discountedPrice" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button color="primary" (click)="onCancel()">
+      Cancel
+    </button>
+  </form>
+</div>
