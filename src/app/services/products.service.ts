@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Product } from '../dataType';
 
@@ -8,7 +8,7 @@ import { Product } from '../dataType';
 })
 export class ProductsService {
   constructor(private _http: HttpClient) {}
-
+  cartData = new EventEmitter<Product[] | []>();
   private baseUrl = 'http://localhost:3000/products';
 
   addProducts(data: any): Observable<any> {
@@ -35,5 +35,19 @@ export class ProductsService {
     return this._http.get<Product[]>(
       `http://localhost:3000/products?q=${query}`
     );
+  }
+
+  localCart(data: Product[]) {
+    let cartData = [];
+    let localCart = localStorage.getItem('localCart');
+    if (!localCart) {
+      localStorage.setItem('localCart', JSON.stringify(data));
+    } else {
+      cartData = JSON.parse(localCart);
+      cartData.push(data);
+      localStorage.setItem('localCart', JSON.stringify(cartData));
+    }
+
+    this.cartData.emit(cartData);
   }
 }

@@ -9,4 +9,5 @@ export interface Product {
   imageUrl: string;
   brand: string;
   size: string[];
+  quantity: undefined | number;
 }

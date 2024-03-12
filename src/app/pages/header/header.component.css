@@ -235,9 +235,9 @@ ul.autocomplete {
   text-decoration: none;
 }
 .menu_link:hover {
-  color: #ff9933;
+  /* color: #ff9933; */
   outline: 1px solid #f3f3f3;
-  padding: 2px;
+  /* padding: 2px; */
 }
 .menu_last:hover {
   color: #ff9933;

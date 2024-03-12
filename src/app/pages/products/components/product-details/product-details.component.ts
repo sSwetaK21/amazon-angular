@@ -32,4 +32,20 @@ export class ProductDetailsComponent {
       this.prodQuantity = 1;
     }
   }
+
+  AddToCart() {
+    if (this.products) {
+      this.products.forEach((product) => {
+        product.quantity = this.prodQuantity;
+      });
+      // console.log(this.products);
+
+      if (!sessionStorage.getItem('username')) {
+        // console.log(this.products);
+        this.prodservice.localCart(this.products);
+      } else {
+        console.log('else');
+      }
+    }
+  }
 }
