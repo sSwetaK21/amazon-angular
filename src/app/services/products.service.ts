@@ -15,7 +15,25 @@ export class ProductsService {
     return this._http.post<any>(this.baseUrl, data);
   }
 
+  update(id: number, data: any) {
+    return this._http.put(`http://localhost:3000/products/${id}`, data);
+  }
+
+  getByID(id: any) {
+    return this._http.get<Product>(`http://localhost:3000/products/${id}`);
+  }
+
   getProducts() {
     return this._http.get<Product[]>(this.baseUrl);
+  }
+
+  deleteRow(rowId: string) {
+    return this._http.delete(`${this.baseUrl}/${rowId}`);
+  }
+
+  searchProducts(query: string) {
+    return this._http.get<Product[]>(
+      `http://localhost:3000/products?q=${query}`
+    );
   }
 }

@@ -35,64 +35,88 @@
   ],
   "products": [
     {
-      "id": "1",
-      "title": "Apple iPhone 13 (128GB) - Blue",
-      "category": "phone",
-      "color": "red",
-      "description": "iphone apple products",
-      "imageUrl": "https://m.media-amazon.com/images/I/3150P3KQFlL._SY445_SX342_QL70_FMwebp_.jpg",
-      "price": 52090,
-      "discountedPrice": 13,
-      "brand": "Apple",
-      "size": "128 GB"
-    },
-    {
-      "id": "426c",
-      "title": "Kurta",
-      "category": "two",
-      "brand": "Myyntra",
-      "color": "red",
-      "description": "This is pretty red kurta",
-      "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20230621/nLUA/64921d48d55b7d0c6380f68e/-473Wx593H-463166426-pink-MODEL.jpg",
-      "price": 2222,
-      "discountedPrice": 1222,
-      "size": "L"
-    },
-    {
-      "id": "ded3",
-      "title": "Men Regular Mid Rise Blue Jeans",
-      "category": "two",
-      "brand": "Roadster",
-      "color": "blue",
-      "description": "Mens Jeans",
-      "imageUrl": "https://rukminim1.flixcart.com/image/612/612/kb1470w0/jean/x/r/a/30-11274626-roadster-original-imafsgsthk6gdpjg.jpeg?q=70",
-      "price": 1159,
-      "discountedPrice": 591,
-      "size": "S"
-    },
-    {
       "id": "a382",
       "title": "Women Bodycon Yellow Dress",
-      "category": "two",
-      "brand": "Aarvia",
-      "color": "yellow",
-      "description": "Dresss",
+      "category": "dress",
+      "brand": "videshh",
+      "color": ["Black", "Pink", "Yellow"],
+      "description": "Classic and simple cut out,it fits all your curves.You can dress up with your jacket or coat for spring,autumn and winter",
       "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/a/x/z/l-na-awd-19-yellow-aarvia-original-imagzffm3bkyzup2.jpeg?q=70",
-      "price": 1999,
-      "discountedPrice": 65,
-      "size": "S"
+      "price": 1078,
+      "discountedPrice": 16,
+      "size": ["64 GB", "128 GB", "258 GB"]
     },
     {
       "id": "5c51",
       "title": "Women Kurta, Pyjama & Dupatta Set Viscose Rayon",
-      "category": "two",
+      "category": "dress",
       "brand": "The Style Story",
-      "color": "Pink",
+      "color": ["Black", "Pink", "Yellow"],
       "description": "Women Kurta, Pyjama & Dupatta Set Viscose Rayon",
       "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l4u7vrk0/ethnic-set/u/h/4/m-e916-the-style-story-original-imagfmqguehvhen3.jpeg?q=70",
-      "price": 748,
-      "discountedPrice": 62,
-      "size": "S"
+      "price": 555,
+      "discountedPrice": 5,
+      "size": ["64 GB", "128 GB", "258 GB"]
+    },
+    {
+      "id": "d49b",
+      "title": "Women Asymmetric Pink Dress",
+      "category": "dress",
+      "brand": "Madame",
+      "color": ["Black", "Pink", "Yellow"],
+      "description": "",
+      "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l0wrafk0/dress/l/2/o/3xl-m2s13003-peach-madame-original-imagchhhwbypcann.jpeg?q=70",
+      "price": 2499,
+      "discountedPrice": 50,
+      "size": ["64 GB", "128 GB", "258 GB"]
+    },
+    {
+      "id": "a7ba",
+      "title": "Apple iPhone 14 (128 GB) - Midnight",
+      "category": "electronic",
+      "brand": "1pluss",
+      "color": ["Black", "Yellow", "Blue"],
+      "description": null,
+      "imageUrl": "https://m.media-amazon.com/images/I/61xGIi8VUAL._SL1500_.jpg",
+      "price": 12000,
+      "discountedPrice": 14,
+      "size": ["64 GB", "128 GB", "258 GB"]
+    },
+    {
+      "id": "453b",
+      "title": "Apple iPhone 15 (256 GB) - Yellow",
+      "category": "electronic",
+      "brand": "Apple",
+      "color": ["Black", "Yellow"],
+      "description": "",
+      "imageUrl": "https://m.media-amazon.com/images/I/313Cl7yn9rL._SY445_SX342_QL70_FMwebp_.jpg",
+      "price": 82999,
+      "discountedPrice": 8,
+      "size": ["64 GB", "128 GB", "258 GB"]
+    },
+    {
+      "id": "5f12",
+      "title": "Women's Skinny Fit High Waist Jeans",
+      "category": "jeans",
+      "brand": "DenimStyle",
+      "color": ["Black", "Yellow"],
+      "description": "Classic skinny fit jeans for women with a high waist design, suitable for casual and formal occasions.",
+      "imageUrl": "https://m.media-amazon.com/images/I/91maNTYT0rL._SX569_.jpg",
+      "price": 3999,
+      "discountedPrice": 34,
+      "size": ["S", "M", "L", "XL"]
+    },
+    {
+      "id": "c432",
+      "title": "Men's Casual Plaid Shirt",
+      "category": "shirts",
+      "brand": "CasualTrend",
+      "color": "Blue",
+      "description": "A comfortable and stylish casual plaid shirt for men, suitable for everyday wear.",
+      "imageUrl": "https://m.media-amazon.com/images/I/61kX6a-QnoL._SX679_.jpg",
+      "price": 2999,
+      "discountedPrice": 34,
+      "size": ["S", "M", "L", "XL"]
     }
   ]
 }

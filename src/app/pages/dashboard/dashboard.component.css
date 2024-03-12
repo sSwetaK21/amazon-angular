@@ -113,6 +113,36 @@ a.nav_logo i {
 .nav_icon {
   font-size: 1.25rem;
 }
+.sub_menu {
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* position: absolute;
+  top: 100%;
+  left: 0; */
+}
+
+.sub_menu li {
+  margin-bottom: 5px;
+}
+
+.nav_link:hover .sub_menu {
+  display: block;
+}
+
+.sub_menu a {
+  display: block;
+  padding: 5px 10px;
+  color: #bbbbbb;
+  text-decoration: none;
+}
+.sub_menu a:hover {
+  color: white;
+}
+.nav_link:hover .sub_menu {
+  display: block;
+}
 .show {
   left: 0;
 }

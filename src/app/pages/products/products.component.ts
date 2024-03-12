@@ -10,7 +10,7 @@ import { Product } from 'src/app/dataType';
 export class ProductsComponent implements OnInit {
   constructor(private prodservice: ProductsService) {}
   filterData: any;
-  products: Product[] = [];
+  products: undefined | Product[];
   ngOnInit() {
     this.filterData = filters;
     this.prodservice.getProducts().subscribe((product) => {

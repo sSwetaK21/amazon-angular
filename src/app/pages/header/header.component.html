@@ -7,6 +7,7 @@
         src="assets/images/white-amazon.webp"
         alt="amazon logo"
         class="Brand-img"
+        routerLink="/home"
       />
     </div>
     <div class="location">
@@ -23,23 +24,31 @@
       <div class="nav-fill">
         <select name="Amazon" id="selector">
           <option value="All">All</option>
-          <option value="IT">IT</option>
-          <option value="Fashion">Fashion</option>
-          <option value="Books">Books</option>
+          <option value="dress">Dress</option>
+          <option value="shirts">Shirts</option>
+          <option value="jeans">Jeans</option>
         </select>
       </div>
 
-      <div class="search-container">
-        <form>
-          <input type="search" placeholder="Search" name="search" />
-        </form>
-      </div>
-      <div class="search">
-        <button mat-icon-button class="btnsearch">
-          <!-- <mat-icon>search</mat-icon> -->
-          <!-- <img src="/assets/images/se.png" alt="search" /> -->
-          <i class="bx bx-search-alt-2"></i>
-        </button>
+      <div class="search-container d-flex">
+        <input
+          type="search"
+          placeholder="Search"
+          name="search"
+          (keyup)="searchProduct($event)"
+        />
+
+        <div class="search">
+          <button mat-icon-button class="btnsearch">
+            <i class="bx bx-search-alt-2"></i>
+          </button>
+        </div>
+
+        <ul class="autocomplete">
+          <li class="searchLi">
+            <a>Hello</a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="nav-right">
@@ -65,27 +74,30 @@
           aria-expanded="false"
         >
           <p class="hello_text">
-            <span class="hello-txt"> Hello, Signin</span><br />Accounts & Lists
+            <span class="hello-txt"> Hello, {{ username }}</span
+            ><br />Accounts & Lists
           </p>
         </a>
         <ul class="dropdown-menu text-small shadow">
           <div class="signBox">
-            <button class="card_button">Sign in securely</button>
+            <button class="card_button" routerLink="/login">
+              Sign in securely
+            </button>
             <p>New Customer? <a routerLink="/login">Start here</a></p>
           </div>
         </ul>
       </div>
-      <div class="orders">
+      <!-- <div class="orders">
         <p class="hello_text">
           <span class="hello-txt"> Returns</span><br />
           & Orders
         </p>
-      </div>
+      </div> -->
       <div class="cart">
         <div class="cart_icon">
           <i class="bx bx-cart"></i>
         </div>
-        <h2 class="cart_head">Cart</h2>
+        <!-- <h2 class="cart_head">Cart</h2> -->
       </div>
     </div>
   </div>
@@ -93,7 +105,7 @@
 
 <!-- nav bar here second header -->
 <nav class="nav_bar">
-  <div class="menu_icon">
+  <div class="menu_icon" routerLink="/all">
     <i class="bx bx-menu"></i>All
     <!-- <p class="menu_text">All</p> -->
   </div>

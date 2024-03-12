@@ -21,6 +21,12 @@ import { UsersComponent } from './pages/dashboard/components/users/users.compone
 import { LayoutComponent } from './pages/dashboard/components/layout/layout.component';
 import { AddProductsComponent } from './pages/add-products/add-products.component';
 import { ProductCardComponent } from './pages/products/components/product-card/product-card.component';
+import { ProductDetailsComponent } from './pages/products/components/product-details/product-details.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
+import { ProductUpdateComponent } from './pages/product-list/product-update/product-update/product-update.component';
+import { ConfirmDelComponent } from './components/confirm-del/confirm-del.component';
+import { AllComponent } from './pages/all/all.component';
+import { SlideComponent } from './pages/all/components/slide/slide.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +44,12 @@ import { ProductCardComponent } from './pages/products/components/product-card/p
     LayoutComponent,
     AddProductsComponent,
     ProductCardComponent,
+    ProductDetailsComponent,
+    ProductListComponent,
+    ProductUpdateComponent,
+    ConfirmDelComponent,
+    AllComponent,
+    SlideComponent,
   ],
   imports: [
     BrowserModule,

@@ -45,6 +45,7 @@ body::-webkit-scrollbar-track {
   display: grid;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .Brand-img {
@@ -90,12 +91,12 @@ body::-webkit-scrollbar-track {
 
 .nav-center {
   display: grid;
-  grid-template-columns: 70px 1fr 50px;
+  grid-template-columns: 60px 1fr 50px;
   align-items: center;
 }
 
 .search-container input[type="search"] {
-  padding: 9px;
+  padding: 4px;
   font-size: 14px;
   padding-top: 10px;
   width: 600px;
@@ -104,7 +105,15 @@ body::-webkit-scrollbar-track {
 .search-container input[type="search"]:focus {
   border: 3px solid #ff9933;
 }
-
+ul.autocomplete {
+  position: absolute;
+  background-color: red;
+  top: 9%;
+  list-style-type: none;
+  display: list-item;
+  z-index: 1;
+  width: 600px;
+}
 .btnsearch {
   font-size: 23px;
   padding: 4px 6px 4px 4px;
@@ -128,9 +137,13 @@ body::-webkit-scrollbar-track {
 }
 
 .nav-right {
-  display: grid;
+  /* display: grid;
   align-items: center;
-  grid-template-columns: 70px 148px 80px 90px;
+  grid-template-columns: 70px 148px 80px 90px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 .nav-flag:hover {
   outline: #f3f3f3 solid 1px;
@@ -200,7 +213,7 @@ body::-webkit-scrollbar-track {
   display: flex;
   font-size: 16px;
   align-items: center;
-
+  cursor: pointer;
   /* display: grid; */
   /* grid-template-columns: 39px 1fr; */
   justify-content: center;

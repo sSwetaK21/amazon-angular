@@ -1,0 +1,99 @@
+.prodColor {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+}
+.product_details {
+  width: 100%;
+}
+.img1 {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  flex-wrap: wrap;
+}
+.img1 img {
+  width: 50px;
+  height: 50px;
+}
+
+.img1 span {
+  font-size: 12px;
+  color: #007185;
+}
+span.discount {
+  color: red;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.card_button {
+  background: #ffcf56;
+  width: 200px;
+  border: 1px solid #e6a400;
+  color: #ffcf56;
+  text-shadow: 0 1px 0 #ffe093;
+  text-align: center;
+  padding: 5px 0px;
+  /* background-image: url(https://m.media-amazon.com/images/S/sash/vfqcwUkuArEiwD2.png); */
+  border-radius: 5px;
+  margin: 10px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.card_button:hover {
+  background: #ff9933;
+  color: white;
+}
+
+.buyBtn {
+  background: #ff9933;
+  width: 200px;
+  border: 1px solid #e6a400;
+  color: #ff9933;
+  text-shadow: 0 1px 0 #ff9933;
+  text-align: center;
+  padding: 5px 0px;
+  /* background-image: url(https://m.media-amazon.com/images/S/sash/vfqcwUkuArEiwD2.png); */
+  border-radius: 5px;
+  margin: 10px;
+  font-weight: 700;
+  color: #0f1111;
+}
+.buyBtn:hover {
+  background-color: #ffcf56;
+  color: white;
+}
+.quantityGroup input[type="text"] {
+  padding: 0.4em;
+  width: 3em;
+  text-align: center;
+}
+button.qbtn {
+  padding: 0.4em;
+  width: 3em;
+}
+.info {
+  margin: 0px;
+  margin-top: 0.3em;
+}
+.prodDes {
+  margin: 0.5em;
+}
+span.price {
+  font-size: 2em;
+  font-weight: bold;
+}
+.productImg {
+  width: 500px;
+  height: 500px;
+}
+.productImg img {
+  width: 100%;
+  height: 100%;
+}
+select#sizeBox {
+  width: 3em;
+}

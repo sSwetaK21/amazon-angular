@@ -1,0 +1,92 @@
+<app-header></app-header>
+
+<div
+  class="row product_details"
+  *ngFor="let product of products"
+  style="overflow-x: hidden; overflow-y: hidden"
+>
+  <div class="col-md-6 d-flex align-items-center justify-content-center">
+    <!-- product img here -->
+    <div class="productImg">
+      <img [src]="product.imageUrl" alt="ProductImage" />
+    </div>
+  </div>
+  <!-- product info here  justify-content-center-->
+  <div class="col-md-6">
+    <div class="productInfo">
+      <h2 class="productTitle">{{ product.title }}</h2>
+      <mat-divider></mat-divider>
+
+      <div class="prodPrice m-2">
+        <p>
+          Price : <span class="price">{{ product.price }}</span>
+        </p>
+        <p>
+          You Save:
+          <span class="discount"> - {{ product.discountedPrice }} %</span>
+        </p>
+      </div>
+      <div class="d-flex flex-wrap">
+        Colors:
+        <div *ngFor="let color of product.color" class="m-2">
+          {{ color }}
+          <h3 [style.backgroundColor]="color" class="prodColor"></h3>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+      <div class="amazonCarasol d-flex m-3">
+        <div class="img1">
+          <img src="/assets/images/prodslide.png" alt="Img" />
+          <span>7 Days Replacement</span>
+        </div>
+        <div class="img1">
+          <img src="/assets/images/prodslide2.png" alt="Img" />
+          <span>Free Delivery</span>
+        </div>
+        <div class="img1">
+          <img src="/assets/images/prodsldie3.png" alt="Img" />
+          <span>1 year Warranty</span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="prodDes">
+        {{ product.description }}
+      </div>
+      <mat-divider></mat-divider>
+      <div class="prodBuy">
+        <div class="prodfree">
+          <h3 class="info">
+            FREE delivery <b>{{ currentDate | date }}</b
+            >. Order within 21 hrs 20 mins.
+          </h3>
+          <p><b>Category :</b> {{ product.category }}</p>
+
+          <p>
+            <b>Size : </b>
+
+            <select name="Size" id="sizeBox">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </p>
+
+          <div class="quantityGroup">
+            <button class="qbtn" (click)="handleQuantity('min')">-</button>
+            <input type="text" value="{{ prodQuantity }}" />
+            <button class="qbtn" (click)="handleQuantity('plus')">+</button>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <button class="card_button">Add to Cart</button>
+          <button class="buyBtn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
