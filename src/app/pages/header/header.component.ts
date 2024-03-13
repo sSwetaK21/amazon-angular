@@ -9,7 +9,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(private prodService: ProductsService) {}
-  products: Product[] = [];
+  searchResult: undefined | Product[];
   username: string | null = null;
   cartItems = 0;
 
@@ -28,14 +28,21 @@ export class HeaderComponent implements OnInit {
 
   searchProduct(query: KeyboardEvent) {
     if (query) {
-      const element = query.target as HTMLInputElement;
+      const element = query.target as HTMLInputElement; //input se value lega
       // console.log(element.value);
       this.prodService
         .searchProducts(element.value)
         .subscribe((res: Product[]) => {
-          this.products = res;
+          if (res.length > 5) {
+            res.length = 5;
+          }
+          this.searchResult = res;
           console.log(res);
         });
     }
+  }
+
+  hideSearch() {
+    this.searchResult = undefined;
   }
 }

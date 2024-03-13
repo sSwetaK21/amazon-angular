@@ -16,11 +16,32 @@ export class ProductDetailsComponent {
     private route: ActivatedRoute
   ) {}
   prodQuantity: number = 1;
+  removeCart = false;
+
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.prodservice.getByID(id).subscribe((product) => {
-      this.products = [product];
-    });
+    id &&
+      this.prodservice.getByID(id).subscribe((product) => {
+        this.products = [product];
+        // console.log(product);
+
+        let cartData = localStorage.getItem('localCart');
+        if (id && cartData) {
+          let items: Product[] = JSON.parse(cartData);
+          // items = items.filter((item: Product) => {
+          //   item.id === id;
+          // });
+          // if (items.length) {
+          //   this.removeCart = true;
+          // } else {
+          //   this.removeCart = false;
+          // }
+
+          //another way
+          let isInCart = items.some((item: Product) => item.id === id); // Check if the current product is in the cart
+          this.removeCart = isInCart; // some will return boolean whch we are storing in isinCart
+        }
+      });
   }
 
   handleQuantity(val: string) {
@@ -39,13 +60,19 @@ export class ProductDetailsComponent {
         product.quantity = this.prodQuantity;
       });
       // console.log(this.products);
-
       if (!sessionStorage.getItem('username')) {
         // console.log(this.products);
         this.prodservice.localCart(this.products);
+        this.removeCart = true;
       } else {
-        console.log('else');
+        console.log('Add product to server cart if authenticated');
       }
     }
+  }
+
+  RemoveCart(prodId: any) {
+    this.prodservice.removeFromCart(prodId);
+    console.log('Remove product from cart');
+    this.removeCart = false;
   }
 }

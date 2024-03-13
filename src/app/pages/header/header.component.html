@@ -36,6 +36,7 @@
           placeholder="Search"
           name="search"
           (keyup)="searchProduct($event)"
+          (blur)="hideSearch()"
         />
 
         <div class="search">
@@ -44,9 +45,9 @@
           </button>
         </div>
 
-        <ul class="autocomplete">
-          <li class="searchLi">
-            <a>Hello</a>
+        <ul class="autocomplete" *ngIf="searchResult">
+          <li class="searchLi" *ngFor="let item of searchResult">
+            <a>{{ item.title }}</a>
           </li>
         </ul>
       </div>

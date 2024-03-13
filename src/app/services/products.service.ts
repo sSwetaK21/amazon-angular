@@ -33,7 +33,7 @@ export class ProductsService {
 
   searchProducts(query: string) {
     return this._http.get<Product[]>(
-      `http://localhost:3000/products?q=${query}`
+      `http://localhost:3000/products?category=${query}`
     );
   }
 
@@ -44,10 +44,27 @@ export class ProductsService {
       localStorage.setItem('localCart', JSON.stringify(data));
     } else {
       cartData = JSON.parse(localCart);
-      cartData.push(data);
+      if (!Array.isArray(cartData)) {
+        //checks if this is an array
+        cartData = [];
+      }
+      cartData.push(...data);
+      console.log(cartData);
+
       localStorage.setItem('localCart', JSON.stringify(cartData));
     }
 
     this.cartData.emit(cartData);
+  }
+
+  removeFromCart(productId: any) {
+    let cartData = localStorage.getItem('localCart');
+    if (cartData) {
+      let items: Product[] = JSON.parse(cartData);
+      items = items.filter((item: Product) => item.id !== productId);
+      console.log(items);
+      localStorage.setItem('localCart', JSON.stringify(items));
+      this.cartData.emit(items);
+    }
   }
 }

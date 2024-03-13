@@ -83,7 +83,17 @@
 
           <mat-divider></mat-divider>
 
-          <button class="card_button" (click)="AddToCart()">Add to Cart</button>
+          <button *ngIf="!removeCart" class="card_button" (click)="AddToCart()">
+            Add to Cart
+          </button>
+          <button
+            *ngIf="removeCart"
+            class="card_button"
+            (click)="RemoveCart(product.id)"
+          >
+            Remove Cart
+          </button>
+
           <button class="buyBtn">Buy Now</button>
         </div>
       </div>

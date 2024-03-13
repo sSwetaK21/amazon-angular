@@ -107,12 +107,19 @@ body::-webkit-scrollbar-track {
 }
 ul.autocomplete {
   position: absolute;
-  background-color: red;
+  background-color: white;
+  color: black;
   top: 9%;
   list-style-type: none;
   display: list-item;
   z-index: 1;
   width: 600px;
+}
+li.searchLi {
+  padding: 4px;
+}
+li.searchLi a {
+  cursor: pointer;
 }
 .btnsearch {
   font-size: 23px;
