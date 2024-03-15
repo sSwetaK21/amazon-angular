@@ -13,6 +13,10 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { AllComponent } from './pages/all/all.component';
 import { ProductDetailsComponent } from './pages/products/components/product-details/product-details.component';
 import { ProductCardComponent } from './pages/products/components/product-card/product-card.component';
+import { SearchComponent } from './pages/search/search.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ChartComponent } from './pages/chart/chart.component';
+import { OrdersListComponent } from './pages/orders-list/orders-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,16 +34,24 @@ const routes: Routes = [
   },
 
   {
+    path: 'search/:query',
+    component: SearchComponent,
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent,
     children: [
       { path: '', redirectTo: 'layout', pathMatch: 'full' },
       { path: 'layout', component: LayoutComponent },
       { path: 'users', component: UsersComponent },
-      { path: 'orders', component: UsersComponent },
+      { path: 'orders', component: OrdersListComponent },
       { path: 'addproduct', component: AddProductsComponent },
       { path: 'productlist', component: ProductListComponent },
-      { path: 'stats', component: UsersComponent },
+      { path: 'stats', component: ChartComponent },
     ],
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

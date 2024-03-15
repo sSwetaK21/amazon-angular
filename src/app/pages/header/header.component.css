@@ -111,16 +111,20 @@ ul.autocomplete {
   color: black;
   top: 9%;
   list-style-type: none;
+  border: 1px solid #bbb;
   display: list-item;
   z-index: 1;
   width: 600px;
 }
 li.searchLi {
-  padding: 4px;
-}
-li.searchLi a {
+  padding: 7px 10px;
+  font-size: 16px;
   cursor: pointer;
 }
+li.searchLi:hover {
+  background-color: #eee;
+}
+
 .btnsearch {
   font-size: 23px;
   padding: 4px 6px 4px 4px;
@@ -196,6 +200,7 @@ li.searchLi a {
   display: grid;
   grid-template-columns: 40px 1fr;
   align-items: center;
+  cursor: pointer;
 }
 
 .cart_icon {

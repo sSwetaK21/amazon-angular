@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Product } from '../dataType';
+import { Cart, Product } from '../dataType';
 
 @Injectable({
   providedIn: 'root',
@@ -66,5 +66,11 @@ export class ProductsService {
       localStorage.setItem('localCart', JSON.stringify(items));
       this.cartData.emit(items);
     }
+  }
+
+  // fetching cart
+
+  addToCart(data: Cart) {
+    return this._http.post('http://localhost:3000/cart', data);
   }
 }

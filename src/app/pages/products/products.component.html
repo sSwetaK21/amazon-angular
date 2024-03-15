@@ -6,8 +6,8 @@
     <div class="sorting">
       <button mat-raised-button [matMenuTriggerFor]="sort">Sort</button>
       <mat-menu #sort="matMenu">
-        <button mat-menu-item>High to Low</button>
-        <button mat-menu-item>Low to High</button>
+        <button mat-menu-item (click)="toggleSort()">High to Low</button>
+        <button mat-menu-item (click)="toggleSort()">Low to High</button>
       </mat-menu>
     </div>
   </div>

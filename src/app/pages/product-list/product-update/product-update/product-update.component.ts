@@ -13,6 +13,8 @@ export class ProductUpdateComponent implements OnInit {
   userList: any;
   paginator: any;
   sort: any;
+  updateForm!: FormGroup;
+
   constructor(
     public dialogref: MatDialogRef<ProductUpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -22,19 +24,17 @@ export class ProductUpdateComponent implements OnInit {
   ) {}
   dataSource!: MatTableDataSource<any>;
 
-  updateForm!: FormGroup;
-
   ngOnInit(): void {
     this.updateForm = this.fb.group({
-      title: this.data.title,
-      category: this.data.category,
-      brand: this.data.brand,
-      color: this.data.color,
-      description: this.data.description,
-      imageUrl: this.data.imageUrl,
-      price: this.data.price,
-      discountedPrice: this.data.discountedPrice,
-      size: this.data.size,
+      title: [this.data.title],
+      category: [this.data.category],
+      brand: [this.data.brand],
+      color: [this.data.color],
+      description: [this.data.description],
+      imageUrl: [this.data.imageUrl],
+      price: [this.data.price],
+      discountedPrice: [this.data.discountedPrice],
+      size: [this.data.size],
     });
     // Fetch product data from ProductService
     this.prodService.getProducts().subscribe((products) => {
@@ -45,22 +45,13 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   updateProduct(form: FormGroup) {
-    if (form.valid) {
-      if (this.data) {
-        this.prodService.update(this.data.id, form.value).subscribe((res) => {
-          // const updateIndex = this.dataSource?.data.findIndex(
-          //   (row: any) => row.id === this.data.id.toString()
-          // );
-          // console.log(this.dataSource.data);
-          // if (updateIndex !== -1) {
-          //   this.dataSource.data[updateIndex] = form.value;
-          //   this.dataSource._updateChangeSubscription();
-          //   console.log('hii');
-          // }
-          this.dialogref.close(form.value);
+    if (this.updateForm.valid && this.data) {
+      this.prodService
+        .update(this.data.id, this.updateForm.value)
+        .subscribe((res) => {
+          this.dialogref.close(this.updateForm.value);
         });
-        this.cd.detectChanges;
-      }
+      this.cd.detectChanges;
     }
   }
 

@@ -1,0 +1,12 @@
+.content-container {
+  max-height: 53px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.content-container.expanded {
+  max-height: none;
+}
+.text-info {
+  cursor: pointer;
+}

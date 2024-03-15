@@ -1,3 +1,7 @@
 .example-full-width {
   width: 100%;
 }
+
+.yellowBtn {
+  background-color: #febd69 !important;
+}

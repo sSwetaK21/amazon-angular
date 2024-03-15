@@ -34,13 +34,18 @@
         <input
           type="search"
           placeholder="Search"
+          #searchInput
           name="search"
           (keyup)="searchProduct($event)"
           (blur)="hideSearch()"
         />
 
         <div class="search">
-          <button mat-icon-button class="btnsearch">
+          <button
+            mat-icon-button
+            class="btnsearch"
+            (click)="submitSearch(searchInput.value)"
+          >
             <i class="bx bx-search-alt-2"></i>
           </button>
         </div>
@@ -94,7 +99,7 @@
           & Orders
         </p>
       </div> -->
-      <div class="cart">
+      <div class="cart" routerLink="/cart">
         <div class="cart_icon">
           <i class="bx bx-cart"></i>
         </div>

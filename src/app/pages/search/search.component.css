@@ -1,0 +1,18 @@
+.filterTitle {
+  display: flex;
+  justify-content: space-between;
+}
+.productsTitle {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  height: 6em;
+}
+.bg-grey {
+  background-color: #eaeded;
+  padding-top: 10px;
+}
+.productPage {
+  background: white;
+}

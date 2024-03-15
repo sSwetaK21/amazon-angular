@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from 'src/app/dataType';
 import { ProductsService } from 'src/app/services/products.service';
 import { filters } from '../products/filters';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-all',
@@ -13,7 +13,11 @@ export class AllComponent {
   filterData: any;
   products: undefined | Product[];
 
-  constructor(private prodservice: ProductsService, private router: Router) {}
+  constructor(
+    private prodservice: ProductsService,
+    private router: Router,
+    private activeRoute: ActivatedRoute
+  ) {}
   ngOnInit() {
     this.filterData = filters;
     this.prodservice.getProducts().subscribe((product) => {
@@ -23,5 +27,9 @@ export class AllComponent {
 
   onSelect(product: any): void {
     this.router.navigate(['/productCard', product.id]); // Navigate to product details route
+  }
+
+  multifilters(val: string, sectId: string) {
+    console.log('value:', val, 'idd', sectId);
   }
 }

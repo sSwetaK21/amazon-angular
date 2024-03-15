@@ -1,57 +1,65 @@
 <app-header></app-header>
-<app-slide></app-slide>
 
-<div class="row all">
-  <div class="col-2 productPage">
-    <div class="filterTitle">
-      <h2>Filter</h2>
-      <mat-icon>filter_list</mat-icon>
-    </div>
-    <div class="filterData">
-      <form>
-        <div *ngFor="let item of filterData">
-          <div class="filters">
-            <h3 class="f-title">{{ item.name }}</h3>
-            <div class="f-section">
-              <div *ngFor="let opt of item.options">
-                <div class="flexBoxx">
-                  <mat-checkbox
-                    id="'filter-' + opt.value"
-                    [name]="item.id"
-                    [value]="opt.value"
-                    color="primary"
-                  >
-                    <span>{{ opt.label }}</span>
-                  </mat-checkbox>
+<div class="bg-grey">
+  <app-slide></app-slide>
+
+  <div class="row all">
+    <div class="col-2 productPage">
+      <div class="filterTitle">
+        <h2>Filter</h2>
+        <mat-icon>filter_list</mat-icon>
+      </div>
+      <div class="filterData">
+        <form>
+          <div *ngFor="let item of filterData">
+            <div class="filters">
+              <h3 class="f-title">{{ item.name }}</h3>
+              <div class="f-section">
+                <div *ngFor="let opt of item.options">
+                  <div class="flexBoxx">
+                    <mat-checkbox
+                      id="'filter-' + opt.value"
+                      [name]="item.id"
+                      [value]="opt.value"
+                      color="primary"
+                      (click)="multifilters(opt.value, item.id)"
+                    >
+                      <span>{{ opt.label }}</span>
+                    </mat-checkbox>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="col-10">
-    <div class="row m-2 gy-3">
-      <div class="col-sm-6 col-md-4" *ngFor="let product of products">
-        <mat-card class="matCard" [routerLink]="['/productCard', product.id]">
-          <div class="image">
-            <img mat-card-image [src]="product.imageUrl" alt="Product Image" />
-          </div>
-          <div class="card_content">
-            <mat-card-header>
-              <mat-card-title>{{ product.title }}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <div class="rupee d-flex">
-                <p class="price">&#8377; {{ product.price }}</p>
-                <p class="discount">(- {{ product.discountedPrice }} % )</p>
-              </div>
+    <div class="col-10">
+      <div class="row m-2 gy-3">
+        <div class="col-sm-6 col-md-4" *ngFor="let product of products">
+          <mat-card class="matCard" [routerLink]="['/productCard', product.id]">
+            <div class="image">
+              <img
+                mat-card-image
+                [src]="product.imageUrl"
+                alt="Product Image"
+              />
+            </div>
+            <div class="card_content">
+              <mat-card-header>
+                <mat-card-title>{{ product.title }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="rupee d-flex">
+                  <p class="price">&#8377; {{ product.price }}</p>
+                  <p class="discount">(- {{ product.discountedPrice }} % )</p>
+                </div>
 
-              <button class="card_button">Add to Cart</button>
-            </mat-card-content>
-          </div>
-        </mat-card>
+                <button class="card_button">Add to Cart</button>
+              </mat-card-content>
+            </div>
+          </mat-card>
+        </div>
       </div>
     </div>
   </div>

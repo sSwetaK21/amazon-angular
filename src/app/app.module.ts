@@ -27,6 +27,10 @@ import { ProductUpdateComponent } from './pages/product-list/product-update/prod
 import { ConfirmDelComponent } from './components/confirm-del/confirm-del.component';
 import { AllComponent } from './pages/all/all.component';
 import { SlideComponent } from './pages/all/components/slide/slide.component';
+import { SearchComponent } from './pages/search/search.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ChartComponent } from './pages/chart/chart.component';
+import { OrdersListComponent } from './pages/orders-list/orders-list.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,10 @@ import { SlideComponent } from './pages/all/components/slide/slide.component';
     ConfirmDelComponent,
     AllComponent,
     SlideComponent,
+    SearchComponent,
+    CartComponent,
+    ChartComponent,
+    OrdersListComponent,
   ],
   imports: [
     BrowserModule,

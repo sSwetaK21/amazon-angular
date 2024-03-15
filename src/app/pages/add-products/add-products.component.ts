@@ -18,7 +18,7 @@ export class AddProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.productForm = this.fb.group({
-      title: '',
+      title: ['', Validators.required],
       category: '',
       brand: '',
       color: '',

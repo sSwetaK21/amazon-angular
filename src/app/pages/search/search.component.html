@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="bg-grey">
+  <div class="products container-fluid">
+    <div class="productsTitle">
+      <h2>Results</h2>
+      <p>
+        Here are your results for <b> {{ searchQuery }}</b>
+      </p>
+      <div class="sorting">
+        <button mat-raised-button [matMenuTriggerFor]="sort">Sort</button>
+        <mat-menu #sort="matMenu">
+          <button mat-menu-item>High to Low</button>
+          <button mat-menu-item>Low to High</button>
+        </mat-menu>
+      </div>
+    </div>
+    <mat-divider class="my-2"></mat-divider>
+
+    <div class="row mx-2">
+      <div class="col-2 productPage">
+        <div class="filterTitle">
+          <h2>Filter</h2>
+          <mat-icon>filter_list</mat-icon>
+        </div>
+        <div class="filterData">
+          <form>
+            <div *ngFor="let item of filterData">
+              <div class="filters">
+                <h3 class="f-title">{{ item.name }}</h3>
+                <div class="f-section">
+                  <div *ngFor="let opt of item.options">
+                    <div class="flexBoxx">
+                      <mat-checkbox
+                        id="'filter-' + opt.value"
+                        [name]="item.id"
+                        [value]="opt.value"
+                        color="primary"
+                      >
+                        <span>{{ opt.label }}</span>
+                      </mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-10">
+        <h1 *ngIf="noSearchRes" class="noResultFound">
+          No Result Found: {{ searchQuery }}
+        </h1>
+
+        <div class="row">
+          <div class="col-12" *ngFor="let product of searchProdResult">
+            <div class="productsCards">
+              <app-product-card [product]="product"></app-product-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

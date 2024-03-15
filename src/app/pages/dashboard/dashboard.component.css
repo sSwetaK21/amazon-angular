@@ -41,7 +41,8 @@ a {
   z-index: 100;
 }
 .header_toggle {
-  color: #4723d9;
+  color: #131921;
+
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -66,7 +67,9 @@ header#header {
   left: -30%;
   width: 68px;
   height: 100vh;
-  background-color: #4723d9;
+  /* background-color: #4723d9; */
+  background-color: #131921;
+
   padding: 0.5rem 1rem 0 0;
   transition: 0.5s;
 }

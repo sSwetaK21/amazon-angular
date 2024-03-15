@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Product } from 'src/app/dataType';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -8,7 +9,7 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private prodService: ProductsService) {}
+  constructor(private prodService: ProductsService, private router: Router) {}
   searchResult: undefined | Product[];
   username: string | null = null;
   cartItems = 0;
@@ -44,5 +45,10 @@ export class HeaderComponent implements OnInit {
 
   hideSearch() {
     this.searchResult = undefined;
+  }
+
+  submitSearch(val: string) {
+    console.log(val);
+    this.router.navigate([`search/${val}`]);
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/dataType';
+import { ToastrService } from 'ngx-toastr';
+import { Cart, Product } from 'src/app/dataType';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class ProductDetailsComponent {
   currentDate: Date = new Date();
   constructor(
     private prodservice: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastr: ToastrService
   ) {}
   prodQuantity: number = 1;
   removeCart = false;
@@ -61,6 +63,9 @@ export class ProductDetailsComponent {
       });
       // console.log(this.products);
       if (!sessionStorage.getItem('username')) {
+        this.toastr.warning('You dont have access', 'Please Login ');
+      }
+      if (sessionStorage.getItem('username')) {
         // console.log(this.products);
         this.prodservice.localCart(this.products);
         this.removeCart = true;

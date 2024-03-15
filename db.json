@@ -4,15 +4,7 @@
       "id": "admin",
       "userType": "admin",
       "email": "admin@gmail.com",
-      "password": "shweta@1234Kodam",
-      "isactive": false
-    },
-    {
-      "id": "neha",
-      "userType": "customer",
-      "email": "neha@gmail.com",
-      "password": "nehaKodam@12345",
-      "isactive": false
+      "password": "shweta@1234Kodam"
     },
     {
       "id": "shweta",
@@ -27,24 +19,24 @@
       "password": "pawan@21Kumar"
     },
     {
-      "id": "ajay",
-      "userType": "admin",
-      "email": "ajay123@gmail.com",
-      "password": "ajay@1234Kumar"
+      "id": "jaykumar",
+      "userType": "customer",
+      "email": "jay@gmail.com",
+      "password": "jay@123Kumar"
     }
   ],
   "products": [
     {
-      "id": "a382",
       "title": "Women Bodycon Yellow Dress",
       "category": "dress",
       "brand": "videshh",
       "color": ["Black", "Pink", "Yellow"],
-      "description": "Dresss",
+      "description": "yellow dresss",
       "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/a/x/z/l-na-awd-19-yellow-aarvia-original-imagzffm3bkyzup2.jpeg?q=70",
-      "price": 1078,
-      "discountedPrice": 16,
-      "size": ["64 GB", "128 GB", "258 GB"]
+      "price": 100,
+      "discountedPrice": 70,
+      "size": ["64 GB", "128 GB", "258 GB"],
+      "id": "a382"
     },
     {
       "id": "5c51",
@@ -107,16 +99,17 @@
       "size": ["S", "M", "L", "XL"]
     },
     {
-      "id": "c432",
-      "title": "Men's Casual Plaid Shirt",
+      "id": "1d60",
+      "title": "GRECIILOOKS Men Solid Regular Fit Casual Shirt",
       "category": "shirts",
-      "brand": "CasualTrend",
+      "brand": "zara",
       "color": "Blue",
-      "description": "A comfortable and stylish casual plaid shirt for men, suitable for everyday wear.",
-      "imageUrl": "https://m.media-amazon.com/images/I/61kX6a-QnoL._SX679_.jpg",
-      "price": 2999,
-      "discountedPrice": 34,
-      "size": ["S", "M", "L", "XL"]
+      "description": "Shrits ",
+      "imageUrl": "https://m.media-amazon.com/images/I/71QrkXBPABL._SY679_.jpg",
+      "price": 1200,
+      "discountedPrice": 12,
+      "size": "S"
     }
-  ]
+  ],
+  "cart": []
 }

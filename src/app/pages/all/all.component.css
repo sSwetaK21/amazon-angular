@@ -6,6 +6,13 @@
   margin: 10px;
   cursor: pointer;
 }
+.bg-grey {
+  background-color: #eaeded;
+}
+
+.productPage {
+  background: white;
+}
 .image {
   height: 350px;
 }
