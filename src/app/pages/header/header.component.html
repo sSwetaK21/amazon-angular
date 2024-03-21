@@ -79,17 +79,22 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <p class="hello_text">
+          <p class="hello_text" *ngIf="isLoggedIn">
             <span class="hello-txt"> Hello, {{ username }}</span
             ><br />Accounts & Lists
           </p>
         </a>
-        <ul class="dropdown-menu text-small shadow">
+        <ul *ngIf="!isLoggedIn" class="dropdown-menu text-small shadow">
           <div class="signBox">
             <button class="card_button" routerLink="/login">
               Sign in securely
             </button>
             <p>New Customer? <a routerLink="/login">Start here</a></p>
+          </div>
+        </ul>
+        <ul *ngIf="isLoggedIn" class="dropdown-menu text-small shadow">
+          <div class="signBox">
+            <button class="card_button" (click)="signOut()">Sign out</button>
           </div>
         </ul>
       </div>
@@ -103,7 +108,7 @@
         <div class="cart_icon">
           <i class="bx bx-cart"></i>
         </div>
-        <span>{{ cartItems }}</span>
+        <span>{{ cartLength }}</span>
         <!-- <h2 class="cart_head">Cart</h2> -->
       </div>
     </div>

@@ -3,10 +3,11 @@
 }
 .whiteBox {
   background-color: white;
-  margin-right: 20px;
   padding: 20px;
 }
-
+.subTotal {
+  margin-left: 16px;
+}
 .containers {
   padding: 20px;
 }
@@ -28,6 +29,7 @@ h2.productTitle {
 .cartInfo {
   font-size: 14px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .cartInfo img {
@@ -36,6 +38,15 @@ h2.productTitle {
 .price {
   font-size: 20px;
   margin-top: 10px;
+}
+.quantityGroup input[type="text"] {
+  padding: 0.4em;
+  width: 3em;
+  text-align: center;
+}
+button.qbtn {
+  padding: 0.4em;
+  width: 3em;
 }
 .card_button {
   background: #ffcf56;
@@ -74,4 +85,10 @@ h2.productTitle {
 .buyBtn:hover {
   background-color: #ffcf56;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .subTotal {
+    margin: 20px;
+  }
 }

@@ -17,6 +17,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ChartComponent } from './pages/chart/chart.component';
 import { OrdersListComponent } from './pages/orders-list/orders-list.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ThankyouComponent } from './pages/thankyou/thankyou.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,11 +30,22 @@ const routes: Routes = [
     path: 'productCard',
     component: ProductCardComponent,
   },
+  // {
+  //   path: 'productCard/:id',
+  //   component: ProductDetailsComponent,
+  // },
   {
-    path: 'productCard/:id',
+    path: 'productCard/:Products_id',
     component: ProductDetailsComponent,
   },
-
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
+  {
+    path: 'thankyou',
+    component: ThankyouComponent,
+  },
   {
     path: 'search/:query',
     component: SearchComponent,

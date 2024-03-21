@@ -5,7 +5,9 @@
 }
 
 .body_imgtag {
-  width: auto;
+  /* width: auto; */
+  max-width: 100%;
+
   height: 540px;
 }
 
@@ -35,8 +37,9 @@
 .click_link {
   position: absolute;
   display: flex;
+  flex-wrap: wrap;
   bottom: 10%;
-  right: 2%;
+  right: 7%;
   width: 82%;
   padding: 10px 90px;
   background-color: #f5f6f6;
@@ -249,4 +252,36 @@
 }
 .signBox p {
   font-size: 12px;
+}
+
+/* media here */
+@media only screen and (max-width: 900px) {
+  .cards_row,
+  .popular_row_grid,
+  .frequent_row_grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .cards_row,
+  .popular_row_grid,
+  .frequent_row_grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cards_row,
+  .popular_row_grid,
+  .frequent_row_grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .click_link {
+    bottom: 1%;
+  }
 }

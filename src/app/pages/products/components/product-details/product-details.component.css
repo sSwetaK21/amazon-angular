@@ -97,3 +97,8 @@ span.price {
 select#sizeBox {
   width: 3em;
 }
+@media only screen and (max-width: 600px) {
+  .product_details {
+    text-align: center;
+  }
+}

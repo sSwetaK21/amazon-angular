@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Product } from 'src/app/dataType';
@@ -11,19 +12,35 @@ import { ProductsService } from 'src/app/services/products.service';
 export class HeaderComponent implements OnInit {
   constructor(private prodService: ProductsService, private router: Router) {}
   searchResult: undefined | Product[];
-  username: string | null = null;
-  cartItems = 0;
+  username: string = '';
+  // cartItems = 0;
+  cartLength: number = 0;
+
+  isLoggedIn: boolean = false;
 
   ngOnInit(): void {
-    this.username = sessionStorage.getItem('username');
+    let authObj = localStorage.getItem('auth');
+    if (authObj) {
+      this.username = JSON.parse(authObj).userName;
+      this.isLoggedIn = true;
+    } else {
+      this.isLoggedIn = false;
+      this.username = '';
+    }
+
+    //this.username = sessionStorage.getItem('username');
 
     //cart number function here
-    let cartData = localStorage.getItem('localCart');
-    if (cartData) {
-      this.cartItems = JSON.parse(cartData).length;
-    }
-    this.prodService.cartData.subscribe((items) => {
-      this.cartItems = items.length;
+    // let cartData = localStorage.getItem('localCart');
+    // if (cartData) {
+    //   this.cartItems = JSON.parse(cartData).length;
+    // }
+    // this.prodService.cartData.subscribe((items) => {
+    //   this.cartItems = items.length;
+    // });
+
+    this.prodService.getallCarts().subscribe((item: any) => {
+      this.cartLength = item.length;
     });
   }
 
@@ -50,5 +67,11 @@ export class HeaderComponent implements OnInit {
   submitSearch(val: string) {
     console.log(val);
     this.router.navigate([`search/${val}`]);
+  }
+
+  signOut() {
+    this.isLoggedIn = false;
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 }

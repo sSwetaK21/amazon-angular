@@ -97,6 +97,7 @@ h2.title {
   justify-content: center;
   height: 92px;
   z-index: 1;
+  cursor: pointer;
 }
 .hr-with-text {
   position: relative;
@@ -122,4 +123,10 @@ h2.title {
 .butn {
   width: 375px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .brand {
+    left: 23%;
+  }
 }

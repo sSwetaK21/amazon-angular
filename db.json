@@ -4,7 +4,13 @@
       "id": "admin",
       "userType": "admin",
       "email": "admin@gmail.com",
-      "password": "shweta@1234Kodam"
+      "password": "admin@123Dash"
+    },
+    {
+      "id": "shweta",
+      "usertype": "customer",
+      "email": "shweta@gmail.com",
+      "password": "shweta@123"
     },
     {
       "id": "shweta",
@@ -30,12 +36,21 @@
       "title": "Women Bodycon Yellow Dress",
       "category": "dress",
       "brand": "videshh",
-      "color": ["Black", "Pink", "Yellow"],
+      "color": [
+        "Black",
+        "Pink",
+        "Yellow"
+      ],
       "description": "yellow dresss",
       "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/a/x/z/l-na-awd-19-yellow-aarvia-original-imagzffm3bkyzup2.jpeg?q=70",
       "price": 100,
-      "discountedPrice": 70,
-      "size": ["64 GB", "128 GB", "258 GB"],
+      "discountPrice": 70,
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "id": "a382"
     },
     {
@@ -43,60 +58,101 @@
       "title": "Women Kurta, Pyjama & Dupatta Set Viscose Rayon",
       "category": "dress",
       "brand": "The Style Story",
-      "color": ["Black", "Pink", "Yellow"],
+      "color": [
+        "Black",
+        "Pink",
+        "Yellow"
+      ],
       "description": "Women Kurta, Pyjama & Dupatta Set Viscose Rayon",
       "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l4u7vrk0/ethnic-set/u/h/4/m-e916-the-style-story-original-imagfmqguehvhen3.jpeg?q=70",
       "price": 555,
-      "discountedPrice": 5,
-      "size": ["64 GB", "128 GB", "258 GB"]
+      "discountPrice": 5,
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "d49b",
       "title": "Women Asymmetric Pink Dress",
       "category": "dress",
       "brand": "Madame",
-      "color": ["Black", "Pink", "Yellow"],
-      "description": "",
+      "color": [
+        "Black",
+        "Pink",
+        "Yellow"
+      ],
+      "description": "Women Asymmetric Pink Dress",
       "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l0wrafk0/dress/l/2/o/3xl-m2s13003-peach-madame-original-imagchhhwbypcann.jpeg?q=70",
       "price": 2499,
-      "discountedPrice": 50,
-      "size": ["64 GB", "128 GB", "258 GB"]
+      "discountPrice": 50,
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "a7ba",
       "title": "Apple iPhone 14 (128 GB) - Midnight",
       "category": "electronic",
       "brand": "1pluss",
-      "color": ["Black", "Yellow", "Blue"],
-      "description": null,
+      "color": [
+        "Black",
+        "Yellow",
+        "Blue"
+      ],
+      "description": "Women Asymmetric Pink Dress",
       "imageUrl": "https://m.media-amazon.com/images/I/61xGIi8VUAL._SL1500_.jpg",
       "price": 12000,
-      "discountedPrice": 14,
-      "size": ["64 GB", "128 GB", "258 GB"]
+      "discountPrice": 14,
+      "size": [
+        "64 GB",
+        "128 GB",
+        "258 GB"
+      ]
     },
     {
       "id": "453b",
       "title": "Apple iPhone 15 (256 GB) - Yellow",
       "category": "electronic",
       "brand": "Apple",
-      "color": ["Black", "Yellow"],
-      "description": "",
+      "color": [
+        "Black",
+        "Yellow"
+      ],
+      "description": "Apple iPhone",
       "imageUrl": "https://m.media-amazon.com/images/I/313Cl7yn9rL._SY445_SX342_QL70_FMwebp_.jpg",
       "price": 82999,
-      "discountedPrice": 8,
-      "size": ["64 GB", "128 GB", "258 GB"]
+      "discountPrice": 8,
+      "size": [
+        "64 GB",
+        "128 GB",
+        "258 GB"
+      ]
     },
     {
       "id": "5f12",
       "title": "Women's Skinny Fit High Waist Jeans",
       "category": "jeans",
       "brand": "DenimStyle",
-      "color": ["Black", "Yellow"],
+      "color": [
+        "Black",
+        "Yellow"
+      ],
       "description": "Classic skinny fit jeans for women with a high waist design, suitable for casual and formal occasions.",
       "imageUrl": "https://m.media-amazon.com/images/I/91maNTYT0rL._SX569_.jpg",
       "price": 3999,
-      "discountedPrice": 34,
-      "size": ["S", "M", "L", "XL"]
+      "discountPrice": 34,
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "1d60",
@@ -107,9 +163,18 @@
       "description": "Shrits ",
       "imageUrl": "https://m.media-amazon.com/images/I/71QrkXBPABL._SY679_.jpg",
       "price": 1200,
-      "discountedPrice": 12,
-      "size": "S"
+      "discountPrice": 12,
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "e111"
+    }
+  ]
 }

@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
     this.filterData = filters;
     this.prodservice.getProducts().subscribe((product) => {
       this.products = product;
+      console.log(this.products, 'this');
     });
     // this.sortFilters();
   }

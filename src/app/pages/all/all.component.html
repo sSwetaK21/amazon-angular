@@ -37,7 +37,11 @@
     <div class="col-10">
       <div class="row m-2 gy-3">
         <div class="col-sm-6 col-md-4" *ngFor="let product of products">
-          <mat-card class="matCard" [routerLink]="['/productCard', product.id]">
+          <!-- <mat-card class="matCard" [routerLink]="['/productCard', product.id]"> -->
+          <mat-card
+            class="matCard"
+            [routerLink]="['/productCard', product.products_id]"
+          >
             <div class="image">
               <img
                 mat-card-image
@@ -52,7 +56,7 @@
               <mat-card-content>
                 <div class="rupee d-flex">
                   <p class="price">&#8377; {{ product.price }}</p>
-                  <p class="discount">(- {{ product.discountedPrice }} % )</p>
+                  <p class="discount">(- {{ product.discountPrice }} % )</p>
                 </div>
 
                 <button class="card_button">Add to Cart</button>

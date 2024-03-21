@@ -26,7 +26,8 @@ export class AllComponent {
   }
 
   onSelect(product: any): void {
-    this.router.navigate(['/productCard', product.id]); // Navigate to product details route
+    // this.router.navigate(['/productCard', product.id]); // Navigate to product details route
+    this.router.navigate(['/productCard', product.Products_id]); // Navigate to product details route
   }
 
   multifilters(val: string, sectId: string) {

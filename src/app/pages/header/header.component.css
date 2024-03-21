@@ -36,9 +36,13 @@ body::-webkit-scrollbar-track {
 }
 
 .grid_container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 140px 100px auto 1fr;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: 1fr auto auto; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .brand {
@@ -100,6 +104,7 @@ body::-webkit-scrollbar-track {
   font-size: 14px;
   padding-top: 10px;
   width: 600px;
+  max-width: 100%;
   border: 1px solid white;
 }
 .search-container input[type="search"]:focus {
@@ -210,7 +215,7 @@ li.searchLi:hover {
   font-size: 18px;
 }
 .nav_bar {
-  display: grid;
+  /* display: grid;
   height: 35px;
   font-family: "Roboto", sans-serif;
   padding: 2px;
@@ -218,7 +223,17 @@ li.searchLi:hover {
   grid-template-columns: 100px 1fr 240px;
   align-items: center;
   justify-content: center;
+  color: white; */
+  display: flex;
+  height: 35px;
+  font-family: "Roboto", sans-serif;
+  padding: 2px;
+  background-color: #232f3e;
+  grid-template-columns: 100px 1fr 240px;
+  align-items: center;
+  justify-content: space-around;
   color: white;
+  flex-wrap: wrap;
 }
 
 .menu_icon {
@@ -315,4 +330,27 @@ ul.dropdown-menu.text-small.shadow.show {
   inset: 0px auto auto 0px;
   margin: 0px;
   transform: translate(-18px, 50px);
+}
+
+/* //media query here */
+
+@media only screen and (max-width: 600px) {
+  .search-container input[type="search"] {
+    width: 100%;
+  }
+  .nav_bar {
+    height: auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .menu_lists {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 }

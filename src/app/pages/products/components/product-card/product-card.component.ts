@@ -8,5 +8,7 @@ import { Product } from 'src/app/dataType';
 })
 export class ProductCardComponent {
   @Input() product!: Product;
-  constructor() {}
+  constructor() {
+    console.log(this.product);
+  }
 }

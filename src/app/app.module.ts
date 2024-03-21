@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/material.module';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ChartComponent } from './pages/chart/chart.component';
 import { OrdersListComponent } from './pages/orders-list/orders-list.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ThankyouComponent } from './pages/thankyou/thankyou.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,8 @@ import { OrdersListComponent } from './pages/orders-list/orders-list.component';
     CartComponent,
     ChartComponent,
     OrdersListComponent,
+    CheckoutComponent,
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +73,7 @@ import { OrdersListComponent } from './pages/orders-list/orders-list.component';
     ReactiveFormsModule,
     FormsModule,
     ToastrModule.forRoot(),
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

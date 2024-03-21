@@ -23,7 +23,7 @@
         </p>
         <p>
           Discount : (You Save)
-          <span class="discount">- {{ product.discountedPrice }} %</span>
+          <span class="discount">- {{ product.discountPrice }} %</span>
         </p>
       </div>
       <div class="d-flex flex-wrap">
@@ -84,18 +84,40 @@
 
           <mat-divider></mat-divider>
 
-          <button *ngIf="!removeCart" class="card_button" (click)="AddToCart()">
-            Add to Cart
-          </button>
-          <button
-            *ngIf="removeCart"
-            class="card_button"
-            (click)="RemoveCart(product.id)"
-          >
-            Remove Cart
-          </button>
+          <div *ngIf="isLoggedIn">
+            <button
+              *ngIf="!removeCart"
+              class="card_button"
+              (click)="AddToCart()"
+            >
+              Add to Cart
+            </button>
+            <button
+              *ngIf="removeCart"
+              class="card_button"
+              (click)="RemoveCart(product.id)"
+            >
+              Remove Cart
+            </button>
 
-          <button class="buyBtn">Buy Now</button>
+            <!-- //another way -->
+            <!-- <button
+              *ngIf="userCartItem.length == 0"
+              class="card_button"
+              (click)="AddToCart()"
+            >
+              Add
+            </button>
+            <button
+              class="card_button"
+              *ngIf="userCartItem.length > 0"
+              (click)="RemoveCart(product.id)"
+            >
+              Remove
+            </button> -->
+          </div>
+
+          <button class="buyBtn" (click)="buyCart()">Buy Now</button>
         </div>
       </div>
     </div>

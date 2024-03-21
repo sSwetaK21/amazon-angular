@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col-12">
-    <mat-card class="matCard" [routerLink]="['/productCard', product.id]">
+    <!-- <mat-card class="matCard" [routerLink]="['/productCard', product.id]"> -->
+    <mat-card
+      class="matCard"
+      [routerLink]="['/productCard', product.products_id]"
+    >
       <div class="image">
         <img mat-card-image [src]="product.imageUrl" alt="Product Image" />
       </div>
@@ -11,7 +15,7 @@
         <mat-card-content>
           <div class="rupee d-flex">
             <p class="price">&#8377; {{ product.price }}</p>
-            <p class="discount">- {{ product.discountedPrice }} %</p>
+            <p class="discount">- {{ product.discountPrice }} %</p>
           </div>
 
           <p class="description">{{ product.description }}</p>

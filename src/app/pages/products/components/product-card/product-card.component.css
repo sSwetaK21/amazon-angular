@@ -46,3 +46,17 @@ p.discount {
   flex: 1;
   padding: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+  .matCard {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    border: 1px solid #d5dbdb;
+    margin: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+}

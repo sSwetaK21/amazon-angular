@@ -12,6 +12,8 @@
 
 .productPage {
   background: white;
+  width: 100%;
+  max-width: 150px;
 }
 .image {
   height: 350px;
@@ -52,4 +54,14 @@ p.price {
 .filterTitle {
   display: flex;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .productPage {
+    display: none;
+  }
+
+  .card_button {
+    margin: 0;
+  }
 }

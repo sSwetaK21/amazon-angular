@@ -1,19 +1,22 @@
 export interface Product {
+  products_id: any | string;
   id: any;
   title: string;
   price: number;
-  discountedPrice: number;
+  discountPrice: number;
   category: string;
   color: string[];
+  product: any;
   description: string;
   imageUrl: string;
   brand: string;
   size: string[];
   quantity: undefined | number;
+  purchaseQuantity: number;
 }
 
 export interface Cart {
-  id: any | undefined;
+  id: any;
   title: string;
   price: number;
   discountedPrice: number;

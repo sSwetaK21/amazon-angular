@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
@@ -59,32 +59,63 @@ export class LoginComponent {
   Onsubmit() {
     if (this.loginForm.valid) {
       const userType = this.loginForm.value.userType;
+
       this.authService
-        .getByCode(this.loginForm.value.username)
-        .subscribe((res) => {
-          this.userData = res;
-          console.log(this.userData);
-          if (this.userData) {
-            if (this.userData.password === this.loginForm.value.password) {
-              sessionStorage.setItem('username', this.userData.id);
-              this.toastr.success('Logged In succesfully');
-              console.log(this.userData);
-              if (userType === 'admin') {
-                this.router.navigate(['/dashboard']);
-              } else if (userType === 'customer') {
-                this.router.navigate(['/home']);
-              } else {
-                this.router.navigate(['/dashboard']);
-              }
+        .login({
+          userName: this.loginForm.value.username,
+          password: this.loginForm.value.password,
+        })
+        .subscribe({
+          next: (res) => {
+            console.log(res);
+            let auth = localStorage.setItem('auth', JSON.stringify(res));
+            this.toastr.success('Welcome', 'You are Logged In Sucessfully');
+            console.log(auth);
+            this.router.navigate(['/home']);
+            if (userType === 'admin') {
+              this.router.navigate(['dashboard']);
             } else {
-              this.toastr.warning('Invalid Credentials');
+              this.router.navigate(['/home']);
             }
-          } else {
-            this.toastr.warning('Invalid Credentials');
-          }
+          },
+          error: (err) => {
+            console.log(err);
+            this.toastr.warning('invalid cred');
+          },
         });
     } else {
-      this.toastr.error('Please Enter Valid values');
+      this.toastr.error('Please Enter Valid Values');
     }
+
+    // Onsubmit() {
+    //   if (this.loginForm.valid) {
+    //     const userType = this.loginForm.value.userType;
+    //     this.authService
+    //       .getByname(this.loginForm.value.username)
+    //       .subscribe((res) => {
+    //         this.userData = res;
+    //         console.log(this.userData);
+    //         if (this.userData) {
+    //           if (this.userData.password === this.loginForm.value.password) {
+    //             sessionStorage.setItem('username', this.userData.id);
+    //             this.toastr.success('Logged In succesfully');
+    //             console.log(this.userData);
+    //             if (userType === 'admin') {
+    //               this.router.navigate(['/dashboard']);
+    //             } else if (userType === 'customer') {
+    //               this.router.navigate(['/home']);
+    //             } else {
+    //               this.router.navigate(['/dashboard']);
+    //             }
+    //           } else {
+    //             this.toastr.warning('Invalid Credentials');
+    //           }
+    //         } else {
+    //           this.toastr.warning('Invalid Credentials');
+    //         }
+    //       });
+    //   } else {
+    //     this.toastr.error('Please Enter Valid values');
+    //   }
   }
 }

@@ -33,7 +33,7 @@ export class ProductUpdateComponent implements OnInit {
       description: [this.data.description],
       imageUrl: [this.data.imageUrl],
       price: [this.data.price],
-      discountedPrice: [this.data.discountedPrice],
+      discountPrice: [this.data.discountedPrice],
       size: [this.data.size],
     });
     // Fetch product data from ProductService
@@ -42,6 +42,7 @@ export class ProductUpdateComponent implements OnInit {
       this.dataSource = new MatTableDataSource(products);
     });
     // this.updateForm.patchValue(this.data);
+    // this.prodService.update().subscribe()
   }
 
   updateProduct(form: FormGroup) {
