@@ -2,7 +2,7 @@
   <form
     class="example-form"
     [formGroup]="updateForm"
-    (ngSubmit)="updateProduct(updateForm)"
+    (ngSubmit)="update(updateForm)"
   >
     <div class="row">
       <div class="col-md-6">
@@ -36,7 +36,7 @@
       <div class="col-md-4">
         <mat-form-field class="example-full-width">
           <mat-label>Product Color</mat-label>
-          <input matInput formControlName="color" />
+          <input matInput formControlName="colors" />
         </mat-form-field>
       </div>
       <div class="col-md-4">

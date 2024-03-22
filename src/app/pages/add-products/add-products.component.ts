@@ -21,7 +21,7 @@ export class AddProductsComponent implements OnInit {
       title: ['', Validators.required],
       category: '',
       brand: '',
-      color: '',
+      colors: '',
       description: '',
       imageUrl: '',
       price: '',

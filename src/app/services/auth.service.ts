@@ -51,7 +51,7 @@ export class AuthService {
     );
   }
 
-  deleteRow(rowId: string) {
+  deleteRowUsers(rowId: string) {
     return this._http.delete(
       `https://localhost:7219/api/users/deleteRow/${rowId}`
     );

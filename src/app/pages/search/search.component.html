@@ -35,6 +35,9 @@
                         [name]="item.id"
                         [value]="opt.value"
                         color="primary"
+                        (change)="
+                          updateFilters(item.id, opt.value, $event.checked)
+                        "
                       >
                         <span>{{ opt.label }}</span>
                       </mat-checkbox>

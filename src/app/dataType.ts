@@ -5,7 +5,7 @@ export interface Product {
   price: number;
   discountPrice: number;
   category: string;
-  color: string[];
+  colors: string[];
   product: any;
   description: string;
   imageUrl: string;
@@ -21,7 +21,7 @@ export interface Cart {
   price: number;
   discountedPrice: number;
   category: string;
-  color: string[];
+  colors: string[];
   description: string;
   imageUrl: string;
   brand: string;

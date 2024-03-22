@@ -27,7 +27,9 @@ export class HeaderComponent implements OnInit {
       this.isLoggedIn = false;
       this.username = '';
     }
-
+    this.prodService.getallCarts().subscribe((item: any) => {
+      this.cartLength = item.length;
+    });
     //this.username = sessionStorage.getItem('username');
 
     //cart number function here
@@ -38,10 +40,6 @@ export class HeaderComponent implements OnInit {
     // this.prodService.cartData.subscribe((items) => {
     //   this.cartItems = items.length;
     // });
-
-    this.prodService.getallCarts().subscribe((item: any) => {
-      this.cartLength = item.length;
-    });
   }
 
   searchProduct(query: KeyboardEvent) {

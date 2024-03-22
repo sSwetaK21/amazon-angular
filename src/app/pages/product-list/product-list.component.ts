@@ -58,21 +58,23 @@ export class ProductListComponent {
   }
 
   deleteRow(row: TableRow) {
-    const index = this.dataSource.data.findIndex((r: any) => r.id === row.id);
-    // console.log(index !== -1);
-    if (index !== -1) {
-      this.dataSource.data.splice(index, 1);
-      // this.dataSource._updateChangeSubscription(); // mat-function which will delete it on runtime
-      this.dataSource.data = [...this.dataSource.data]; // Update table on ui like on deleting it will update it no need to refresh for changes
-    }
+    // console.log(row, 'row');
 
-    this.prodservice.deleteRow(row.id).subscribe(
+    this.prodservice.deleteRow(row.products_id).subscribe(
       (res) => {
-        this.toastr.success('Deleted');
+        const index = this.dataSource.data.findIndex(
+          (r: any) => r.products_id === row.products_id
+        );
+        // console.log(index !== -1);
+        if (index !== -1) {
+          this.dataSource.data.splice(index, 1);
+          this.dataSource.data = [...this.dataSource.data]; // Update table on ui like on deleting it will update it no need to refresh for changes
+        }
+        this.toastr.success('Row deleted successfully');
       },
       (error) => {
-        this.toastr.error('Error Occured');
         console.log(error);
+        this.toastr.error('failed to Delete Row');
       }
     );
   }

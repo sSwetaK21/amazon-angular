@@ -1,0 +1,52 @@
+.order-card {
+  color: #fff;
+}
+
+.bg-c-one {
+  /* background: linear-gradient(45deg,#4099ff,#73b4ff); */
+  background-color: #232f3e;
+}
+
+.bg-c-two {
+  background-color: #e6a400;
+}
+
+.bg-c-three {
+  background-color: #ffcf56;
+}
+
+.bg-c-four {
+  background-color: #0f1111;
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+  box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+  border: none;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+  padding: 25px;
+}
+
+.order-card i {
+  font-size: 26px;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+p.m-b-0 {
+  font-size: 16px;
+}
+h2.text-center {
+  font-size: 50px;
+}

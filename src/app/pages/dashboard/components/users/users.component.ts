@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
 export interface TableRow {
-  id: string;
+  products_id: string;
   name: string;
   email: string;
 }
@@ -47,7 +47,9 @@ export class UsersComponent {
   }
 
   deleteRow(row: TableRow) {
-    const index = this.dataSource.data.findIndex((r: any) => r.id === row.id);
+    const index = this.dataSource.data.findIndex(
+      (r: any) => r.id === row.products_id
+    );
     // console.log(index !== -1);
     if (index !== -1) {
       this.dataSource.data.splice(index, 1);
@@ -55,7 +57,7 @@ export class UsersComponent {
       this.dataSource.data = [...this.dataSource.data]; // Update table on ui like on deleting it will update it no need to refresh for changes
     }
 
-    this.authService.deleteRow(row.id).subscribe(
+    this.authService.deleteRowUsers(row.products_id).subscribe(
       (res) => {
         this.toastr.success('Deleted');
       },

@@ -25,7 +25,7 @@
                   Amazon Delivered
                 </p>
                 <p>Size : {{ item.product.size }}</p>
-                <p>Color : {{ item.product.color }}</p>
+                <p>Color : {{ item.product.colors }}</p>
                 <p>Quantity : {{ item.purchaseQuantity }}</p>
 
                 <button class="buyBtn" (click)="remove(item)">Delete</button>
@@ -42,10 +42,12 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-3 whiteBox subTotal">
+      <div class="col-sm-3 whiteBox subTotal" *ngFor="let item of cartData">
         <div class="price">
           <p>
-            SubTotal (1 Item) :<b>{{ calculateQuantity() }}</b>
+            SubTotal ({{ item.purchaseQuantity }} Item) :<b>{{
+              calculateQuantity()
+            }}</b>
           </p>
         </div>
         <button class="card_button" routerLink="/checkout">

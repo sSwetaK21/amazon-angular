@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Cart, Product } from '../dataType';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -27,9 +28,9 @@ export class ProductsService {
   //   return this._http.get<Product[]>(this.baseUrl);
   // }
 
-  deleteRow(rowId: string) {
-    return this._http.delete(`${this.baseUrl}/${rowId}`);
-  }
+  // deleteRow(rowId: string) {
+  //   return this._http.delete(`${this.baseUrl}/${rowId}`);
+  // }
 
   searchProducts(query: string) {
     return this._http.get<Product[]>(
@@ -106,8 +107,9 @@ export class ProductsService {
 
   update(id: number, data: any) {
     return this._http.put(
-      `https://localhost:7219/api/products/updateproducts/${id}`,
-      data
+      `https://localhost:7219/api/Products/updateProduct/${id}`,
+      data,
+      { responseType: 'text' }
     );
   }
 
@@ -135,5 +137,24 @@ export class ProductsService {
   }
   getallCarts() {
     return this._http.get('https://localhost:7219/api/Carts/getCart');
+  }
+
+  deleteRow(rowId: any) {
+    return this._http.delete(
+      `https://localhost:7219/api/Products/delete/${rowId}`,
+      { responseType: 'text' }
+    );
+  }
+
+  getCategoryData(category: string) {
+    return this._http.get(
+      `https://localhost:7219/api/Products/getProductsbyCategory/${category}`
+    );
+  }
+
+  getCategorySearch(category: string): Observable<Product[]> {
+    return this._http.get<Product[]>(
+      `https://localhost:7219/api/Products/getProductsbyCategory/${category}`
+    );
   }
 }

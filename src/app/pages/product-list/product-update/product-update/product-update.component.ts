@@ -29,11 +29,11 @@ export class ProductUpdateComponent implements OnInit {
       title: [this.data.title],
       category: [this.data.category],
       brand: [this.data.brand],
-      color: [this.data.color],
+      colors: [this.data.colors],
       description: [this.data.description],
       imageUrl: [this.data.imageUrl],
       price: [this.data.price],
-      discountPrice: [this.data.discountedPrice],
+      discountPrice: [this.data.discountPrice],
       size: [this.data.size],
     });
     // Fetch product data from ProductService
@@ -45,13 +45,20 @@ export class ProductUpdateComponent implements OnInit {
     // this.prodService.update().subscribe()
   }
 
-  updateProduct(form: FormGroup) {
+  update(form: FormGroup) {
     if (this.updateForm.valid && this.data) {
+      console.log(this.data);
+
       this.prodService
-        .update(this.data.id, this.updateForm.value)
+        .update(this.data.products_id, this.updateForm.value)
         .subscribe((res) => {
           this.dialogref.close(this.updateForm.value);
+          // this.prodService.getProducts().subscribe((products) => {
+          //   // Initialize MatTableDataSource with the fetched data
+          //   this.dataSource = new MatTableDataSource(products);
+          // });
         });
+
       this.cd.detectChanges;
     }
   }
