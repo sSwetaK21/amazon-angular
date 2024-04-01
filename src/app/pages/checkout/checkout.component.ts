@@ -24,14 +24,14 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.addresForm = this.fb.group({
       firstName: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       address: ['', Validators.required],
     });
 
     this.cardForm = this.fb.group({
-      cardNumber: ['', Validators.required],
+      cardNumber: ['', Validators.required, Validators.pattern(/^[0-9]{4}$/)],
       expiryDate: ['', Validators.required],
-      cvv: ['', Validators.required],
+      cvv: ['', Validators.required, Validators.pattern(/^[0-9]{4}$/)],
       nameOnCard: ['', Validators.required],
     });
     this.username = sessionStorage.getItem('username');

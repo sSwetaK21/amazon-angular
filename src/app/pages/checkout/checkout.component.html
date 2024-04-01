@@ -161,6 +161,15 @@
                           formControlName="firstName"
                         />
                         <label for="" class="form__label">FirstName</label>
+                        <small
+                          class="text-danger"
+                          *ngIf="
+                            addresForm.get('firstName')?.invalid &&
+                            addresForm.get('firstName')?.touched
+                          "
+                        >
+                          Enter your First Name
+                        </small>
                       </div>
                     </div>
 
@@ -173,6 +182,15 @@
                           formControlName="phoneNumber"
                         />
                         <label for="" class="form__label">Phone Number</label>
+                        <small
+                          class="text-danger"
+                          *ngIf="
+                            addresForm.get('phoneNumber')?.invalid &&
+                            addresForm.get('phoneNumber')?.touched
+                          "
+                        >
+                          Phone number should be of 10 numbers only
+                        </small>
                       </div>
                     </div>
 
@@ -244,10 +262,19 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="     4 Digits Only "
+                          placeholder="     4 Digits Only * "
                           formControlName="cardNumber"
                         />
                         <label for="" class="form__label">Card Number</label>
+                        <small
+                          class="text-danger"
+                          *ngIf="
+                            cardForm.get('cardNumber')?.invalid &&
+                            cardForm.get('cardNumber')?.touched
+                          "
+                        >
+                          Enter card last 4 digits
+                        </small>
                       </div>
                     </div>
 
@@ -256,10 +283,19 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="    MM/YY "
+                          placeholder="    MM/YY* "
                           formControlName="expiryDate"
                         />
                         <label for="" class="form__label">Expiry date</label>
+                        <small
+                          class="text-danger"
+                          *ngIf="
+                            cardForm.get('expiryDate')?.invalid &&
+                            cardForm.get('expiryDate')?.touched
+                          "
+                        >
+                          Enter your Card Expiry Date
+                        </small>
                       </div>
                     </div>
 
@@ -272,6 +308,15 @@
                           formControlName="cvv"
                         />
                         <label for="" class="form__label">cvv code</label>
+                        <small
+                          class="text-danger"
+                          *ngIf="
+                            cardForm.get('cvv')?.invalid &&
+                            cardForm.get('cvv')?.touched
+                          "
+                        >
+                          Enter CVV Number with 4 Digits
+                        </small>
                       </div>
                     </div>
                     <div class="col-12">

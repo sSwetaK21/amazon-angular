@@ -70,7 +70,8 @@ export class LoginComponent {
             console.log(res);
             let auth = localStorage.setItem('auth', JSON.stringify(res));
             this.toastr.success('You are Logged In Sucessfully', 'Welcome');
-            console.log(auth);
+            console.log(auth, 'Auth');
+
             this.router.navigate(['/home']);
             if (userType === 'admin') {
               this.router.navigate(['dashboard']);
