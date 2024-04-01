@@ -14,7 +14,7 @@ import { ProductsService } from 'src/app/services/products.service';
   templateUrl: './doughnut.component.html',
   styleUrls: ['./doughnut.component.css'],
 })
-export class DoughnutComponent implements OnInit {
+export class DoughnutComponent implements AfterViewInit {
   @ViewChild('doughnutChart')
   private doughnutChartRef!: ElementRef<HTMLCanvasElement>;
   private doughnutChart!: Chart<'doughnut', any[], unknown>;
@@ -22,7 +22,7 @@ export class DoughnutComponent implements OnInit {
   constructor(private prodService: ProductsService) {}
   category: any;
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     const ctx = this.doughnutChartRef.nativeElement.getContext('2d');
     if (!ctx) {
       console.error('Canvas context is null');
@@ -33,7 +33,7 @@ export class DoughnutComponent implements OnInit {
     this.doughnutChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: [],
+        labels: ['Dress', 'Shirts', 'Eletronic', 'Others'],
         datasets: [
           {
             label: 'Categories',
@@ -43,8 +43,6 @@ export class DoughnutComponent implements OnInit {
               'rgba(54, 162, 235, 0.5)',
               'rgba(255, 206, 86, 0.5)',
               'rgba(75, 192, 192, 0.5)',
-              'rgba(153, 102, 255, 0.5)',
-              'rgba(255, 159, 64, 0.5)',
             ],
           },
         ],

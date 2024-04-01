@@ -69,7 +69,7 @@ export class LoginComponent {
           next: (res) => {
             console.log(res);
             let auth = localStorage.setItem('auth', JSON.stringify(res));
-            this.toastr.success('Welcome', 'You are Logged In Sucessfully');
+            this.toastr.success('You are Logged In Sucessfully', 'Welcome');
             console.log(auth);
             this.router.navigate(['/home']);
             if (userType === 'admin') {
@@ -80,7 +80,7 @@ export class LoginComponent {
           },
           error: (err) => {
             console.log(err);
-            this.toastr.warning('invalid cred');
+            this.toastr.warning('Invalid credentials', 'Try again');
           },
         });
     } else {

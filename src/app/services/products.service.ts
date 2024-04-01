@@ -3,6 +3,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Cart, Product } from '../dataType';
 import { throwError } from 'rxjs';
+import { environment as env } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ import { throwError } from 'rxjs';
 export class ProductsService {
   constructor(private _http: HttpClient) {}
   cartData = new EventEmitter<Product[] | []>();
-  private baseUrl = 'http://localhost:3000/products';
+  // private baseUrl = 'http://localhost:3000/products';
 
   // addProducts(data: any): Observable<any> {
   //   return this._http.post<any>(this.baseUrl, data);
@@ -79,7 +80,7 @@ export class ProductsService {
 
   addToCart(userId: number, productId: number, quantity: number) {
     return this._http.post(
-      `https://localhost:7219/api/Carts/addToCart/${userId}/${productId}/${quantity}`,
+      `${env.baseUrl}/api/Carts/addToCart/${userId}/${productId}/${quantity}`,
       {}
     );
   }
@@ -98,63 +99,124 @@ export class ProductsService {
 
   // private baseUrl = 'https://localhost:7219/api/products/getproducts';
 
+  // addProducts(data: any): Observable<any> {
+  //   return this._http.post<any>(
+  //     'https://localhost:7219/api/products/addproducts',
+  //     data
+  //   );
+  // }
+
+  // update(id: number, data: any) {
+  //   return this._http.put(
+  //     `https://localhost:7219/api/Products/updateProduct/${id}`,
+  //     data,
+  //     { responseType: 'text' }
+  //   );
+  // }
+
+  // getByID(id: any) {
+  //   return this._http.get<Product>(
+  //     `https://localhost:7219/api/products/getproducts/${id}`
+  //   );
+  // }
+
+  // getProducts() {
+  //   return this._http.get<Product[]>(
+  //     'https://localhost:7219/api/products/getproducts'
+  //   );
+  // }
+
+  // removeFromCart(userId: any, productId: any) {
+  //   return this._http.delete(
+  //     `https://localhost:7219/api/Carts/removeCartItem/${userId}/${productId}`,
+  //     { observe: 'response' }
+  //   );
+  // }
+
+  // getCartItems(userId: any) {
+  //   return this._http.get(`https://localhost:7219/api/Carts/cart/${userId}`);
+  // }
+  // getallCarts() {
+  //   return this._http.get('https://localhost:7219/api/Carts/getCart');
+  // }
+
+  // deleteRow(rowId: any) {
+  //   return this._http.delete(
+  //     `https://localhost:7219/api/Products/delete/${rowId}`,
+  //     { responseType: 'text' }
+  //   );
+  // }
+
+  // getCategoryData(category: string) {
+  //   return this._http.get(
+  //     `https://localhost:7219/api/Products/getProductsbyCategory/${category}`
+  //   );
+  // }
+
+  // getCategorySearch(category: string): Observable<Product[]> {
+  //   return this._http.get<Product[]>(
+  //     `https://localhost:7219/api/Products/getProductsbyCategory/${category}`
+  //   );
+  // }
+
+  //updated cde
+
   addProducts(data: any): Observable<any> {
     return this._http.post<any>(
-      'https://localhost:7219/api/products/addproducts',
+      `${env.baseUrl}/api/products/addproducts`,
       data
     );
   }
 
   update(id: number, data: any) {
     return this._http.put(
-      `https://localhost:7219/api/Products/updateProduct/${id}`,
+      `${env.baseUrl}/api/Products/updateProduct/${id}`,
       data,
-      { responseType: 'text' }
+      {
+        responseType: 'text',
+      }
     );
   }
 
   getByID(id: any) {
     return this._http.get<Product>(
-      `https://localhost:7219/api/products/getproducts/${id}`
+      `${env.baseUrl}/api/products/getproducts/${id}`
     );
   }
 
   getProducts() {
-    return this._http.get<Product[]>(
-      'https://localhost:7219/api/products/getproducts'
-    );
+    return this._http.get<Product[]>(`${env.baseUrl}/api/products/getproducts`);
   }
 
   removeFromCart(userId: any, productId: any) {
     return this._http.delete(
-      `https://localhost:7219/api/Carts/removeCartItem/${userId}/${productId}`,
+      `${env.baseUrl}/api/Carts/removeCartItem/${userId}/${productId}`,
       { observe: 'response' }
     );
   }
 
   getCartItems(userId: any) {
-    return this._http.get(`https://localhost:7219/api/Carts/cart/${userId}`);
+    return this._http.get(`${env.baseUrl}/api/Carts/cart/${userId}`);
   }
   getallCarts() {
-    return this._http.get('https://localhost:7219/api/Carts/getCart');
+    return this._http.get(`${env.baseUrl}/api/Carts/getCart`);
   }
 
   deleteRow(rowId: any) {
-    return this._http.delete(
-      `https://localhost:7219/api/Products/delete/${rowId}`,
-      { responseType: 'text' }
-    );
+    return this._http.delete(`${env.baseUrl}/api/Products/delete/${rowId}`, {
+      responseType: 'text',
+    });
   }
 
   getCategoryData(category: string) {
     return this._http.get(
-      `https://localhost:7219/api/Products/getProductsbyCategory/${category}`
+      `${env.baseUrl}/api/Products/getProductsbyCategory/${category}`
     );
   }
 
   getCategorySearch(category: string): Observable<Product[]> {
     return this._http.get<Product[]>(
-      `https://localhost:7219/api/Products/getProductsbyCategory/${category}`
+      `${env.baseUrl}/api/Products/getProductsbyCategory/${category}`
     );
   }
 }

@@ -35,6 +35,7 @@ import { OrdersListComponent } from './pages/orders-list/orders-list.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ThankyouComponent } from './pages/thankyou/thankyou.component';
 import { DoughnutComponent } from './pages/dashboard/components/doughnut/doughnut.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { DoughnutComponent } from './pages/dashboard/components/doughnut/doughnu
     CheckoutComponent,
     ThankyouComponent,
     DoughnutComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

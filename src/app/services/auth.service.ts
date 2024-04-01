@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
+import { environment as env } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -28,32 +29,58 @@ export class AuthService {
 
   // by dotnet API here
 
+  // getAll() {
+  //   return this._http.get('https://localhost:7219/api/users/getUsers');
+  // }
+
+  // getByname(code: any) {
+  //   return this._http.get(`https://localhost:7219/api/users/getByname/${code}`);
+  // }
+  // private userId: number | undefined;
+
+  // login(loginData: any) {
+  //   return this._http.post('https://localhost:7219/api/Users/login', loginData);
+  // }
+  // isLoggedIn(): boolean {
+  //   return sessionStorage.getItem('userId') !== null; // Checks if the userId is stored in session or not
+  // }
+
+  // proceedRegister(userType: string, inputData: any) {
+  //   return this._http.post(
+  //     'https://localhost:7219/api/users/register/',
+  //     inputData
+  //   );
+  // }
+
+  // deleteRowUsers(rowId: string) {
+  //   return this._http.delete(
+  //     `https://localhost:7219/api/users/deleteRow/${rowId}`
+  //   );
+  // }
+
+  //updated code
+
   getAll() {
-    return this._http.get('https://localhost:7219/api/users/getUsers');
+    return this._http.get(`${env.baseUrl}/api/users/getUsers`);
   }
 
   getByname(code: any) {
-    return this._http.get(`https://localhost:7219/api/users/getByname/${code}`);
+    return this._http.get(`${env.baseUrl}/api/users/getByname/${code}`);
   }
   private userId: number | undefined;
 
   login(loginData: any) {
-    return this._http.post('https://localhost:7219/api/Users/login', loginData);
+    return this._http.post(`${env.baseUrl}/api/Users/login`, loginData);
   }
   isLoggedIn(): boolean {
     return sessionStorage.getItem('userId') !== null; // Checks if the userId is stored in session or not
   }
 
   proceedRegister(userType: string, inputData: any) {
-    return this._http.post(
-      'https://localhost:7219/api/users/register/',
-      inputData
-    );
+    return this._http.post(`${env.baseUrl}/api/users/register/`, inputData);
   }
 
   deleteRowUsers(rowId: string) {
-    return this._http.delete(
-      `https://localhost:7219/api/users/deleteRow/${rowId}`
-    );
+    return this._http.delete(`${env.baseUrl}/api/users/deleteRow/${rowId}`);
   }
 }

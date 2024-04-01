@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { AuthService } from 'src/app/services/auth.service';
 import { DataServiceService } from 'src/app/services/data-service.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-chart',
@@ -12,11 +14,14 @@ export class ChartComponent {
   chart: any = [];
   isExpanded: boolean = false;
 
-  constructor(private dataService: DataServiceService) {}
+  constructor(
+    private authservice: AuthService,
+    private Prodservice: ProductsService
+  ) {}
 
   ngOnInit() {
-    this.dataService.getUsersData().subscribe((userData: any) => {
-      this.dataService.getProductsData().subscribe((productsData: any) => {
+    this.authservice.getAll().subscribe((userData: any) => {
+      this.Prodservice.getProducts().subscribe((productsData: any) => {
         const numUsers = userData.length;
         const numProducts = productsData.length;
 

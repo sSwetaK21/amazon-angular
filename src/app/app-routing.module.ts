@@ -19,6 +19,7 @@ import { ChartComponent } from './pages/chart/chart.component';
 import { OrdersListComponent } from './pages/orders-list/orders-list.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ThankyouComponent } from './pages/thankyou/thankyou.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -68,6 +69,10 @@ const routes: Routes = [
     ],
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '**',
+    component: ErrorComponent,
+  },
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { DataServiceService } from 'src/app/services/data-service.service';
 
 @Component({
@@ -9,14 +10,14 @@ import { DataServiceService } from 'src/app/services/data-service.service';
 export class LayoutComponent implements OnInit {
   users: any;
 
-  constructor(private dataservice: DataServiceService) {}
+  constructor(private authservice: AuthService) {}
 
   ngOnInit(): void {
     this.getUsersData();
   }
 
   getUsersData() {
-    this.dataservice.getUsersData().subscribe((data) => {
+    this.authservice.getAll().subscribe((data: any) => {
       this.users = data.length;
       console.log('data', data);
     });
